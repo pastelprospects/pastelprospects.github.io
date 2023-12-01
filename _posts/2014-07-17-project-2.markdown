@@ -1,15 +1,15 @@
 ---
-title: Escape
-subtitle: Website Design
+title: AudioCardio
+subtitle: Sound Therapy
 layout: default
 modal-id: 2
-date: 2014-07-17
-img: escape.png
-thumbnail: escape-thumbnail.png
+date: 2020-01-01
+img: audiocardio.png
+thumbnail: audiocardio-logo.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+project-date: 2020
+category: HealthTech
+description: Evidence-based mobile app for hearing loss that delivers inaudible sound therapies
+site: http://audiocardio.com/
 
 ---

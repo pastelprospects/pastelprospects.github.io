@@ -1,64 +1,39 @@
-url: https://y7kim.github.io
-baseurl: /agency-jekyll-theme/
+url: https://pastelprospects.github.io
+baseurl: ""
 
 # Site settings
-title: Awesome Title
-email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: Pastel Prospects
+email: support@pastelprospects.com
+description: "Purposefully designing a more equitable and sustainable future alongside exceptional founders"
 
 
 # Team names, titles and social links
 people:
-- name: Kay Garland
+- name: Samuel Ekanem
   pic: 1
-  position: Lead Designer
+  position: Founder, Principal
   social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: stack-overflow
-      url: #
-
-- name: Larry Parker
-  pic: 2
-  position: Lead Marketer
-  social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
     - title: linkedin
-      url: #
-
-- name: Diana Petersen
-  pic: 3
-  position: Lead Developer
-  social:
+      url: https://www.linkedin.com/in/samuel-ekanem/
+    - title: medium
+      url: https://medium.com/@samuelekanem
     - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: google-plus
-      url: #
+      url: https://twitter.com/sammypastel
+
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket 
-    url: http://bitbucket.org/jekyll
+  - title: linkedin
+    url: https://www.linkedin.com/company/pastel-venture-studio/about/
+  - title: instagram
+    url: https://instagram.com/pastel.plug
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/pastelprospects
+
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: Oakland, CA 94612
 
 # Build settings
 markdown: kramdown
