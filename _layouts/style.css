@@ -7,6 +7,4 @@
       padding: 18px 12px 18px 12px;
   }
 
-  .subscribe {
-    background-image: url('img/map-image.png')
-  }
+  @media(min-width:768px)
