@@ -5,7 +5,7 @@ layout: default
 modal-id: 1
 date: 2021-01-01
 img: afx.png
-thumbnail: afx.png
+thumbnail: afx-logo.png
 alt: image-alt
 project-date: 2021
 category: FinTech
