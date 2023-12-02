@@ -2,7 +2,7 @@
 {% include css/agency.css %}
 {{ content }}
 
-  .navbar .brand,
-  .navbar .nav > li > a {
-      padding: 18px 12px 18px 12px;
-  }
+.navbar .brand,
+.navbar .nav > li > a {
+    padding: 18px 12px 18px 12px;
+}
