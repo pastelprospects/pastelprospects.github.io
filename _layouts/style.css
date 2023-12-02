@@ -5,3 +5,9 @@
 .navbar ul {
     height: 40px !important;
 }
+
+@media screen and (max-width: 992px) {
+    .navbar {
+      display: none;
+    }
+  }  
