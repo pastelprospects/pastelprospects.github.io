@@ -2,19 +2,70 @@
 {% include css/agency.css %}
 {{ content }}
 
-.navbar ul {
-    height: 40px !important;
-}
-
-.navbar li {
+.navbar-header ul {
+    margin: auto;
+    text-align: left;
+    width: 80%;
+  } @media(max-width: 768px) {
+      .navbar-header {
+        width: 90%;
+      }
+    } @media(max-width: 638px) {
+        .navbar-header {
+          width: 100%;
+        }
+      } 
+  
+  
+  .navbar-brand {
+    float: left;
+    margin-left: 0px;
+    font-size: 1.5em;
+    height: 0px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  } @media(max-width: 768px) {
+      .navbar-brand {
+  /*       margin-left: 5px; */
+      }
+    }
+  
+  #navbar ul {
     display: inline-block;
-}
+    float: right;
+    list-style: none;
+    /* margin-right: 14px; */
+    margin-top: 0px;
+    text-align: right;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+  } @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    } @media(orientation: landscape) {
+        #navbar ul {
+          display: inline-block;
+        }
+      }
+  
+  #navbar li {
+    display: inline-block;
+  }
 
-@media screen and (max-width: 400px) {
-    .navbar {
-      display: none;
-    }
-    .navbar-submenu-wrapper {
-        display: none
-    }
-  }  
+  .navbar .brand,
+  .navbar .nav > li > a {
+      padding: 28px 12px 28px 12px;
+  }
+  .navbar-inner{
+      min-height:0px;
+  }
+  .navbar .navbar-inner .brand {
+      margin-top: 10px;
+  }
+  .widget .navbar .navbar-inner .nav .dropdown a {
+      margin-top: 0px;
+  }
+  .widget .navbar .navbar-inner a.btn {
+      margin-top: 2px;
+  }
