@@ -4,8 +4,8 @@ subtitle: Wireless Loudspeakers
 layout: default
 modal-id: 3
 date: 2020-01-01
-img: audio.png
-thumbnail: audio-logo.png
+img: Audio.png
+thumbnail: Audio-logo.png
 alt: image-alt
 project-date: 2020
 category: IoT (Internet-of-Things)

@@ -4,8 +4,8 @@ subtitle: Energy Management
 layout: default
 modal-id: 4
 date: 2021-01-01
-img: coi.png
-thumbnail: coi-logo.png
+img: COI.png
+thumbnail: COI-logo.png
 alt: image-alt
 project-date: 2021
 category: ClimateTech
