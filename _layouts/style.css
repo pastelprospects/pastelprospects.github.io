@@ -7,4 +7,9 @@
       padding: 18px 12px 18px 12px;
   }
 
-  @media(min-width:768px)
+  @media only screen and (max-device-width: 480px) {
+  .navbar .brand,
+  .navbar .nav > li > a {
+      padding: 18px 12px 18px 12px;
+  }
+}
