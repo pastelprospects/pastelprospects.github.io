@@ -10,13 +10,7 @@
     .navbar {
       display: none;
     }
+    .navbar-submenu-wrapper {
+        display: none
+    }
   }  
-
-@media(max-width:1024px){ 
-    .kl-navbar-submenu-wrapper { 
-        display: none; 
-    } 
-    .kl-navbar__parent>a:after{ 
-        display: none 
-    } 
-} 
