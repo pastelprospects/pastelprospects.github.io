@@ -4,5 +4,19 @@
 
 .navbar .brand,
 .navbar .nav > li > a {
-    padding: 28px 10px 14px 10px;
+    padding: 22px 10px 14px 10px;
+    display: inline-block;
+}
+
+.navbar-inner{
+    min-height:16px;
+}
+.navbar .navbar-inner .brand {
+    margin-top: 0px;
+}
+.widget .navbar .navbar-inner .nav .dropdown a {
+    margin-top: 0px;
+}
+.widget .navbar .navbar-inner a.btn {
+    margin-top: 2px;
 }
