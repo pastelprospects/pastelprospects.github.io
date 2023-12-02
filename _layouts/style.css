@@ -4,7 +4,7 @@
 
 .navbar .brand,
 .navbar .nav > li > a {
-    padding: 22px 10px 14px 10px;
+    padding: 24px 10px 16px 10px;
     display: inline-block;
 }
 
@@ -20,3 +20,15 @@
 .widget .navbar .navbar-inner a.btn {
     margin-top: 2px;
 }
+
+@media (max-width: 500px) {
+    .navbar .navbar-inner {
+      flex-wrap: nowrap;
+    }
+    
+    .navbar .navbar-inner {
+      text-align: right;
+      margin-left: 0px;
+      order: 2;
+    }
+  }
