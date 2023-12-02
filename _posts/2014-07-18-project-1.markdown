@@ -4,8 +4,8 @@ subtitle: Crossborder Payments
 layout: default
 modal-id: 1
 date: 2021-01-01
-img: afriex.png
-thumbnail: afriex-logo.png
+img: afx.png
+thumbnail: afx-logo.png
 alt: image-alt
 project-date: 2021
 category: FinTech

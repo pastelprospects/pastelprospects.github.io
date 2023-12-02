@@ -4,8 +4,8 @@ subtitle: Sound Therapy
 layout: default
 modal-id: 2
 date: 2020-01-01
-img: audiocardio.png
-thumbnail: audiocardio-logo.png
+img: ac.png
+thumbnail: ac-logo.png
 alt: image-alt
 project-date: 2020
 category: HealthTech

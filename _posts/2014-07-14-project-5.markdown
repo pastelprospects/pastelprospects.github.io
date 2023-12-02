@@ -4,8 +4,8 @@ subtitle: SME Lending
 layout: default
 modal-id: 5
 date: 2022-01-01
-img: payhippo.png
-thumbnail: payhippo-logo.png
+img: pay.png
+thumbnail: pay-logo.png
 alt: image-alt
 project-date: 2022
 category: FinTech
