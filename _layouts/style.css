@@ -6,6 +6,10 @@
     height: 40px !important;
 }
 
+.navbar li {
+    display: inline-block;
+}
+
 @media screen and (max-width: 400px) {
     .navbar {
       display: none;
