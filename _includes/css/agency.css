@@ -174,10 +174,11 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: #222;
+    flex-wrap: nowrap;
 }
 
 .navbar-default .navbar-brand {
-    flex-wrap: wrap;
+    display: inline-block;
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     color: #{{ site.data.template.color.primary }};
 }
