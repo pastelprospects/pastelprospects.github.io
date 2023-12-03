@@ -175,10 +175,10 @@ fieldset[disabled] .btn-xl.active {
     border-color: transparent;
     background-color: #222;
     flex-wrap: nowrap;
+    display: inline-block;
 }
 
 .navbar-default .navbar-brand {
-    display: inline-block;
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
     color: #{{ site.data.template.color.primary }};
 }
