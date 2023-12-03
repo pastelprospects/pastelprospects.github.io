@@ -5,7 +5,7 @@ layout: default
 modal-id: 6
 date: 2020-01-01
 img: Strom.png
-thumbnail: Strom-logo.jpg
+thumbnail: Strom-logo.png
 alt: image-alt
 project-date: 2020
 category: Automotive
