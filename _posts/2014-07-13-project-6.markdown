@@ -3,11 +3,11 @@ title: Strom Motors
 subtitle: Personal Mobility
 layout: default
 modal-id: 6
-date: 2021-01-01
+date: 2020-01-01
 img: Strom.png
 thumbnail: Strom-logo.jpg
 alt: image-alt
-project-date: 2021
+project-date: 2020
 category: Automotive
 description: Electric urban mobility solution with unique reverse trike design (Exited 2022)
 site: http://strommotors.com
