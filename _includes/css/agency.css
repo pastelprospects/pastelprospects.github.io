@@ -185,6 +185,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
+    display: inline-block;
     color: #{{ site.data.template.color.secondary }};
 }
 
