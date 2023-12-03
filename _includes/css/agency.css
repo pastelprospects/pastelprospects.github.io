@@ -199,7 +199,6 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
-    display: inline-block;
 }
 
 .navbar-default .navbar-toggle:hover,
