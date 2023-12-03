@@ -10,13 +10,8 @@
 
 
 @media (max-width: 500px) {
-    .navbar .brand {
+    .navbar .brand,
+    .navbar .nav > li > a {
       flex-wrap: wrap;
+      display: inline-block;
     }
-    
-    .navbar .navbar-inner.nav {
-      text-align: right;
-      margin-left: 0px;
-      order: 1;
-    }
-  }
