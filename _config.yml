@@ -1,40 +1,39 @@
-url: https://pastelprospects.github.io
-baseurl: ""
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that.
+# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'.
+# If you change this file, please restart the server process.
 
 # Site settings
-title: Pastel Prospects
-email: support@pastelprospects.com
-description: "Purposefully designing a more equitable and sustainable future alongside exceptional founders"
+# are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
+  theme: jekyll-agency
 
-# Team names, titles and social links
-people:
-- name: Samuel Ekanem
-  pic: 1
-  position: Founder, Principal
-  social:
-    - title: linkedin
-      url: https://www.linkedin.com/in/samuel-ekanem/
-    - title: medium
-      url: https://medium.com/@samuelekanem
-    - title: twitter
-      url: https://twitter.com/sammypastel
+  url    : pastelprospects.github.io # the base hostname & protocol for your site, e.g. http://example.com
+  baseurl: "" # the subpath of your site, e.g. /blog
 
+  title      : Pastel Prospects
+  email      : inquire@pastelprospects.com #this is also the email contact forms will go to
+  description: "Purposefully designing a more equitable and sustainable future alongside exceptional founders"
+  author     : S. Remy Ekanem
+  logo:     #optional, defaults to site title
+    path: assets\img\pastel.png
+    height: 60px #height in px, defaults to 52px
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-social:
-  - title: linkedin
-    url: https://www.linkedin.com/company/pastel-venture-studio/about/
-  - title: instagram
-    url: https://instagram.com/pastel.plug
-  - title: github
-    url: https://github.com/pastelprospects
+  locale: "en-US" # See available languages in _data/sitetext.yml
 
+  analytics:
+    google: #Google Analytics tracking code here
 
-# Postal address (add as many lines as necessary)
-address:
-  - line: Oakland, CA 94612
+  collections:
+    portfolio:
 
-# Build settings
-markdown: kramdown
-permalink: pretty
+  markdown: kramdown
+
+  # Uncomment following line to use Formspree form ID based URL instead of email based URL
+  # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
+  # formspree_form_path: "f/a_form_id"
