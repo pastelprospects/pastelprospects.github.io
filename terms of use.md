@@ -5,7 +5,7 @@ background: grey
 permalink: /terms-of-use
 ---
 
-<div style="padding-top: 60px;" class="col-lg-12 text-center">
+<div style="padding-top: 35px;" class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Terms of Use</h2>
 </div>
 

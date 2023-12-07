@@ -111,7 +111,7 @@ en: &DEFAULT_EN
 
   contact:
     title: "Stay In Touch"
-    text: "Joing Our Mailing List"
+    text: "Join Our Mailing List"
     section: contact
     name: "Name*"
     name-validation: "Please enter your name."

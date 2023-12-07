@@ -1,7 +1,7 @@
 ---
 caption: #what displays in the portfolio grid:
   title: AudioCardio
-  subtitle: Crossborder Payments
+  subtitle: Sound Therapy
   thumbnail: assets/img/portfolio/AC-logo.png
 
 site: http://audiocardio.com
