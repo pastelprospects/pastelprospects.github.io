@@ -13,8 +13,8 @@ header.masthead {
 }
 
    header.masthead .intro-text {
-      padding-top: 100px;
-      padding-bottom: 50px;
+      padding-top: 125px;
+      padding-bottom: 75px;
    }
     
    header.masthead .intro-lead-in {
@@ -27,7 +27,7 @@ header.masthead {
       font-size: 50px;
       font-weight: 500;
       margin-bottom: 15px;
-      letter-spacing: 10px;
+      letter-spacing: 5px;
       line-height: 0px;
       @include heading-font;
     }
