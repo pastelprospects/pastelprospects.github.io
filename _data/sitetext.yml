@@ -95,7 +95,7 @@ en: &DEFAULT_EN
   team:
     title: "Team"
     text: "Nimble & Agile"
-    subtext: Building a More Equitable and Sustainable Future.
+    subtext: Building a More Equitable and Sustainable Future
     section: team
     people:
       - name: "Samuel Ekanem"
@@ -110,7 +110,7 @@ en: &DEFAULT_EN
             icon: fab fa-twitter
 
   contact:
-    title: "Stay In Touch"
+    title: "Subscribe"
     text: "Join Our Mailing List"
     section: contact
     name: "Name*"
