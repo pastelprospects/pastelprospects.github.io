@@ -11,7 +11,7 @@ permalink: /privacy-policy
 
 **OVERVIEW**
 
-This Privacy Policy applies to Pastel Prospects (hereinafter, “we”, “us”, or “our”) or https://www.pastelprospects.com (also referred to as “the Website”). We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose information collected to third parties. This Privacy Policy applies only to information collected through the Website and does not apply to information attributable to other sources. It is our policy to respect your privacy regarding any information collected while operating our website. We respect your privacy and are committed to protecting personally identifiable information you may provide to us through the Website.
+This Privacy Policy applies to Pastel Prospects (hereinafter, “we”, “us”, or “our”) or [https://www.pastelprospects.com](/#) (also referred to as “the Website”). We have adopted this privacy policy ("Privacy Policy") to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose information collected to third parties. This Privacy Policy applies only to information collected through the Website and does not apply to information attributable to other sources. It is our policy to respect your privacy regarding any information collected while operating our website. We respect your privacy and are committed to protecting personally identifiable information you may provide to us through the Website.
 
 This Privacy Policy, together with the Terms & Conditions posted on the Website, sets forth the general rules and policies governing your use of our Website. Depending on your activities when visiting our Website, you may be required to agree to additional terms & conditions.
 
@@ -27,7 +27,7 @@ Pastel Prospects only discloses logged-in user and commenter IP addresses under 
 
 **GATHERING OF PERSONALLY-IDENTIFYING INFORMATION**
 
-Certain visitors to Pastel Prospects’ websites choose to interact in ways that require we gather personally-identifying information. The amount and type of information that Pastel Prospects gathers depend on the nature of the interaction. For example, we ask visitors who subscribe to our newsletter at https://www.pastelprospects.com/subscribe to provide a name and email address.
+Certain visitors to Pastel Prospects’ websites choose to interact in ways that require we gather personally-identifying information. The amount and type of information that Pastel Prospects gathers depend on the nature of the interaction. For example, we ask visitors who subscribe to our newsletter at [https://www.pastelprospects.com/subscribe](/subscribe) to provide a name and email address.
 
 
 **PROTECTION OF CERTAIN PERSONALLY-IDENTIFYING INFORMATION**

@@ -1,16 +1,35 @@
-<!-- Portfolio Grid -->
+---
+layout: page
+title: Portfolio
+background: grey
+permalink: /ventures
+---
+
 {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
   <div class="container">
+   <h2 class="section-heading text-uppercase text-center">Venture Studio</h2>
+   <h3 class="section-subheading text-muted text-center">Other Ways to Innovate</h3>
+    <div class="row">
+        <div class="col-md-6">
+          <h4 style="padding-top: 35;">Design Studio + Innovation Lab</h4>
+          <p style="padding-bottom: 40px;" class="text-muted">At Pastel, we partner with diverse founding teams that are designing and developing a more equitable and sustainable future. Together we actively pioneer marketplace and internet infrastructure solutions for the most marginalized communities.</p>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#overview">Overview</a>  
+        </div>
+        <div class="col-md-6">
+          <img class="rounded-circle img-fluid" src="assets/img/takeoff.jpg" alt="" width="90%">
+          </div>
+      </div>
+  <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].portfolio.title | markdownify | default: "Portfolio" }}</h2>
+        <h2 class="section-heading text-uppercase"style="padding-top:50px">Portfolio</h2>
         <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].portfolio.text | markdownify }}</h3>
       </div>
     </div>
     <div class="row">
 	{% for project in site.portfolio %}
-      <div class="col-md-2 col-sm-6 portfolio-item">
+      <div class="col-md-4 col-sm-6 portfolio-item">
         <a class="portfolio-link" data-toggle="modal" href="#p{{ forloop.index }}">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
@@ -20,8 +39,8 @@
           <img class="img-fluid" src="{{ project.caption.thumbnail }}" alt="">
         </a>
         <div class="portfolio-caption">
-          <h6><a href="{{ project.site }}" target="_blank" rel="noopener noreferrer">{{ project.caption.title }}</a></h6>
-          <p4 class="text-muted">{{ project.caption.subtitle }}</p4>
+          <h4><a href="{{ project.site }}" target="_blank" rel="noopener noreferrer">{{ project.caption.title }}</a></h4>
+          <p class="text-muted">{{ project.caption.subtitle }}</p>
         </div>
       </div>
 	{% endfor %}
@@ -56,6 +75,6 @@
 	{% endfor %}
     </div>
   </div>
-</section>
+  </section>
 {% endif %}
 {% include modals.html %}

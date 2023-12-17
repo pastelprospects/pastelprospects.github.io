@@ -32,8 +32,8 @@ en: &DEFAULT_EN
         icon: fas fa-dollar-sign
 
   portfolio:
-    title: "[Portfolio](https://en.wikipedia.org/wiki/Markdown)"
-    text: "Strategy at a Glance"
+    title: "[Portfolio](/ventures)"
+    text: "Firms Shaping the Future"
     section: portfolio
     closebutton: "Close Project"
 
@@ -110,7 +110,7 @@ en: &DEFAULT_EN
             icon: fab fa-twitter
 
   contact:
-    title: "Subscribe"
+    title: "[Subscribe](/subscribe)"
     text: "Join Our Mailing List"
     section: contact
     name: "Name*"
@@ -127,9 +127,13 @@ en: &DEFAULT_EN
   footer:
     page:
       - url: /privacy-policy
-        site: "Privacy Policy"
+        site: "Privacy"
       - url: /terms-of-use
-        site: "Terms & Conditions"
+        site: "Terms"
+      - url: /subscribe
+        site: "Subscribe"
+      - url: /ventures
+        site: "Ventures"
     social:
       - url: https://www.linkedin.com/company/pastel-venture-studio/about/
         icon: "fab fa-linkedin-in"
