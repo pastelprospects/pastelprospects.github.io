@@ -1,3 +1,4 @@
+
 <!-- Portfolio Grid -->
 {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
@@ -10,74 +11,63 @@
     </div>
    <!-- Carousel -->
 <div id="fawesome-carousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-      <li data-target="#fawesome-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#fawesome-carousel" data-slide-to="1"></li>
-  </ol>
-
   <div class="carousel-inner" role="listbox">
-      <div class="item active">
-          <div class="row">
-            <div class="col-sm-2"><a href="http://afriexapp.com" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/Afx-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Afriex</h5>
-                  <p>Crossborder Payments</p></a>
-            </div>
+    <div class="carousel-item active col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/Afx-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+            <a href="http://afriexapp.com">
+            <h5>Afriex</h5>
+              <p>Crossborder Payments</p></a>
           </div>
-            <div class="col-sm-2"><a href="http://audiocardio.com" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/AC-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>AudioCardio</h5>
-                  <p>Sound Therapy</p></a>
-              </div>
-            </div>
-            <div class="col-sm-2"><a href="http://audios.com" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/Audio-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Audios</h5>
-                  <p>Wireless Speakers</p></a>
-              </div>
-            </div>
-            <div class="col-sm-2"><a href="http://coienergy.com" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/COI-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>COI Energy</h5>
-                  <p>Energy Management</p></a>
-              </div>
-            </div>
-            <div class="col-sm-2"><a href="http://payhippo.ng" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/pay-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Payhippo</h5>
-                  <p>SME Lending</p></a>
-              </div>
-            </div>
-            <div class="col-sm-2"><a href="http://strommotors.com" target="_blank" rel="noopener noreferrer">
-              <img class="img-fluid" src="/assets/img/portfolio/Strom-logo.png" alt="">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Strom Motors</h5>
-                  <p>Commuter Mobility</p></a>
-              </div>
-            </div>
         </div>
-      <div class="item">
-      </div>
+    <div class="carousel-item col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/AC-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+            <a href="http://audiocardio.com">
+            <h5>AudioCardio</h5>
+              <p>Sound Therapy</p></a>
+          </div>
+        </div>
+    <div class="carousel-item col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/Audio-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+            <a href="http://audios.com">
+            <h5>Audios</h5>
+              <p>Wireless Speakers</p></a>
+          </div>
+        </div>
+    <div class="carousel-item col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/COI-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+            <a href="http://coienergy.com">
+            <h5>COI Energy</h5>
+              <p>Energy Management</p></a>
+          </div>
+        </div>
+    <div class="carousel-item col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/pay-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+        <a href="http://payhippo.ng">
+        <h5>Payhippo</h5>
+              <p>SME Lending</p></a>
+          </div>
+        </div>
+    <div class="carousel-item col-md-4">
+      <img class="d-block w-100" src="/assets/img/portfolio/Strom-logo.png" alt="">
+      <div class="carousel-caption d-md-block">
+            <a href="http://strommotors.com">
+            <h5>Strom Motors</h5>
+              <p>Commuter Mobility</p></a>
+          </div>
+        </div>
   </div>
-
-  <a class="left slide-control" href="#fawesome-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-  <a class="right slide-control" href="#fawesome-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-</div>
-
-
-<style type="text/css">
-
-.slide-control{color:#4d4d4d8d;font-size:80px;left:30px;margin-top:-70px;position:absolute;top:50%;}
-.slide-control.right{left:auto;right:30px;}
-
-</style>
+    <a class="left slide-control" href="#fawesome-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+    <a class="right slide-control" href="#fawesome-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+  </div>
+  <style type="text/css">
+    .slide-control{color:#4d4d4d8d;font-size:80px;left:30px;margin-top:-70px;position:absolute;top:50%;}
+    .slide-control.right{left:auto;right:30px;}
+  </style>
 </section>
 {% endif %}
 {% include modals.html %}
-
-

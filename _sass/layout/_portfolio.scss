@@ -139,7 +139,8 @@
   }
 }
 
-.carousel { overflow: hidden; padding-bottom: 8rem; }
+.carousel { overflow: hidden; padding-bottom: 6rem; }
 .carousel-caption { top: 100%; }
 .carousel-inner { overflow: visible; }
-.carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 4rem; }
+.carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 8rem; }
+.carousel-item {justify-content: center; align-content: center; flex-direction: column; margin-left: 32%;}

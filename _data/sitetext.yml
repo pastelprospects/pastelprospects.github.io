@@ -35,7 +35,7 @@ en: &DEFAULT_EN
     title: "[Portfolio](/ventures)"
     text: "Firms Shaping the Future"
     section: portfolio
-    closebutton: "Close Project"
+    closebutton: "Close"
 
   timeline:
     title: "Timeline"
