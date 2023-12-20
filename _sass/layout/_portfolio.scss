@@ -143,4 +143,8 @@
 .carousel-caption { top: 100%; }
 .carousel-inner { overflow: visible; }
 .carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 8rem; }
-.carousel-item {justify-content: center; align-content: center; flex-direction: column; margin-left: 32%;}
+
+@media (min-width: 500px) {
+  .carousel-item {width: 40%; justify-content: center; align-content: center; flex-direction: column; margin-left: 30%;}}
+
+  
