@@ -9,6 +9,7 @@
       max-width: 400px;
       margin: 0 auto;
       cursor: pointer;
+      box-shadow: 2px 4px 6px 0 rgba(22, 22, 26, 0.18);
       .portfolio-hover {
         position: absolute;
         width: 100%;
@@ -42,9 +43,10 @@
     }
     .portfolio-caption {
       max-width: 400px;
-      margin: 0 auto;
+      margin: 10px auto;
       padding: 25px;
       text-align: center;
+      box-shadow: 2px 4px 6px 0 rgba(22, 22, 26, 0.18);
       background-color: $white;
       h4 {
         margin: 0;
@@ -97,6 +99,7 @@
     }
     img {
       margin-bottom: 30px;
+      box-shadow: 2px 4px 6px 0 rgba(22, 22, 26, 0.18);
     }
     button {
       cursor: pointer;
@@ -139,12 +142,25 @@
   }
 }
 
-.carousel { overflow: hidden; padding-bottom: 6rem; }
+.carousel { overflow: hidden; padding-bottom: 10rem; }
+.carousel-item {box-shadow: 2px 8px 10px 0 rgba(22, 22, 26, 0.18);}
 .carousel-caption { top: 100%; }
 .carousel-inner { overflow: visible; }
-.carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 8rem; }
+.carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 2rem; }
+.carousel .carousel-indicators li {  background-color: gray; }
+.carousel .carousel-indicators li.active { background-color: rgb(144, 199, 207); }
+
 
 @media (min-width: 500px) {
-  .carousel-item {width: 40%; justify-content: center; align-content: center; flex-direction: column; margin-left: 30%;}}
+  .carousel-item {width: 40%; justify-content: center; align-content: center; flex-direction: column; margin-left: 30%;}
+}
+
+// .carousel, .carousel-inner, .carousel-inner > .carousel-item { overflow: hidden; }
+
+// .carousel-inner:before { position:absolute; top:0; bottom: 0; right: 77%; left: 0; content:""; display:block; background-color: #fff; z-index: 2; }
+// .carousel-inner:after { position:absolute; top:0; bottom: 0; right: 0; left: 77%; content:""; display:block; background-color: #fff; z-index: 2; }
+
+
 
   
+

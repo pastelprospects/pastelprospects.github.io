@@ -4,8 +4,7 @@ title: Privacy Policy
 background: grey
 permalink: /privacy-policy
 ---
-
-<div style="padding: 40px;" class="col-lg-12 text-center">
+<div style="padding-top: 60px; padding-bottom:30px" class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Privacy Policy</h2>
 </div>
 
