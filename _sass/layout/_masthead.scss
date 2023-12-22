@@ -52,3 +52,21 @@ header.masthead {
         @include heading-font;
       }
     }
+
+header.top-header { 
+  background-image: url(/assets/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+} 
+  
+header.top-header > h1 { 
+  color: white; 
+  background-color: rgba(81, 81, 81, 0.3); 
+  padding: 5em 2em;
+  margin: -2em; 
+} 

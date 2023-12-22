@@ -4,8 +4,7 @@ title: Terms of Use
 background: grey
 permalink: /terms-of-use
 ---
-
-<div style="padding-top: 60px; padding-bottom:30px" class="col-lg-12 text-center">
+<div class="col-lg-12 text-center">
 	<h2 class="section-heading text-uppercase">Terms & Conditions</h2>
 </div>
 
