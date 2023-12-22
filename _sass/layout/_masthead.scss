@@ -12,7 +12,7 @@ header.masthead {
   -o-background-size: cover;
 }
 
-@media only screen and (max-device-width: 1366px) {
+@media (min-width: 768px) {
   .header.masthead {
     background-attachment: scroll;
   }
@@ -75,9 +75,10 @@ header.top-header {
   border-bottom-right-radius: 5% 15%;
 } 
 
-@media only screen and (max-device-width: 1366px) {
+@media (min-width: 768px) {
   .header.top-header {
     background-attachment: scroll;
+    height: 200px;
   }
 }
   
