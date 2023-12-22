@@ -62,20 +62,22 @@ header.top-header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 400px;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
+  height: 300px;
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
   border-bottom-left-radius: 5% 15%;
   border-bottom-right-radius: 5% 15%;
 } 
 
+header.top-header > h1 {
+  padding: 5em 4em;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.553);
+}
+
 @media only screen and (max-width: 768px) {
   .header.top-header {
     background-attachment: scroll;
-    border-top-left-radius:0px;
-    border-top-right-radius:0px;
-    border-bottom-left-radius: 0% 0%;
-    border-bottom-right-radius: 0% 0%;
   }
 }
   
