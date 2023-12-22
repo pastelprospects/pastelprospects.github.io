@@ -77,14 +77,8 @@ header.top-header {
   
 header.top-header > h2 {
   text-align: center;
-  padding-top: 7em;
+  padding-top: 5em;
   color: rgba(255, 255, 255, 0.553);
-  font-size: 30px;
+  font-size: 40px;
 }
-
-@media (min-width: 768px) {
-  header.top-header > h2 {
-    font-size: 40px;
-    padding-top: 5em
-  }}
 
