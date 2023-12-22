@@ -4,7 +4,7 @@ header.masthead {
   color: white;
   background-image: url("#{$header-image}");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -62,7 +62,7 @@ header.masthead {
 header.top-header { 
   background-image: url(/assets/img/banner.jpg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
