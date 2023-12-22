@@ -63,14 +63,14 @@ header.top-header {
   background-size: cover;
   -o-background-size: cover;
   height: 300px;
-  border-top-left-radius:25px;
-  border-top-right-radius:25px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
   border-bottom-left-radius: 5% 15%;
   border-bottom-right-radius: 5% 15%;
 } 
 
 header.top-header > h1 {
-  padding: 5em 4em;
+  padding: 5em;
   margin: 0;
   color: rgba(255, 255, 255, 0.553);
 }
