@@ -69,21 +69,21 @@ header.top-header {
   border-bottom-right-radius: 5% 15%;
 } 
 
-header.top-header > h1 {
-  padding: 4.5em;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.553);
-  font-size: 75%;
-}
-
-@media (min-width: 768px) {
-  header.top-header > h1 {
-    font-size: 40px;
-  }}
-
 @media only screen and (max-width: 768px) {
   .header.top-header {
     background-attachment: scroll;
   }
 }
   
+header.top-header > h2 {
+  text-align: left;
+  padding: 4em;
+  color: rgba(255, 255, 255, 0.553);
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  header.top-header > h2 {
+    font-size: 40px;
+  }}
+
