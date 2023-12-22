@@ -12,6 +12,12 @@ header.masthead {
   -o-background-size: cover;
 }
 
+@media only screen and (max-device-width: 1366px) {
+  .header.masthead {
+    background-attachment: scroll;
+  }
+}
+  
    header.masthead .intro-text {
       padding-top: 125px;
       padding-bottom: 75px;
@@ -68,4 +74,10 @@ header.top-header {
   border-bottom-left-radius: 5% 15%;
   border-bottom-right-radius: 5% 15%;
 } 
+
+@media only screen and (max-device-width: 1366px) {
+  .header.top-header {
+    background-attachment: scroll;
+  }
+}
   
