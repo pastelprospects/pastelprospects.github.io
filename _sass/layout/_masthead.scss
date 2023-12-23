@@ -57,12 +57,12 @@ header.top-header {
   background-image: url(/assets/img/banner.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center bottom;
+  background-position: center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 375px;
+  height: 325px;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
   border-bottom-left-radius: 5% 15%;
@@ -85,23 +85,23 @@ header.top-header > h2 {
 @media (min-width: 768px) {
   header.top-header > h2 {
     font-size: 40px;
-    padding-top: 6em
+    padding-top: 6em;
   }}
 
   header.top-header-alt { 
     background-image: url(/assets/img/banner2.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    height: 300px;
+    height: 325px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    border-bottom-left-radius: 5% 10%;
-    border-bottom-right-radius: 5% 10%;
+    border-bottom-left-radius: 5% 15%;
+    border-bottom-right-radius: 5% 15%;
   } 
   
   @media only screen and (max-width: 768px) {
