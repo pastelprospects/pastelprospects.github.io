@@ -62,7 +62,7 @@ header.top-header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 300px;
+  height: 375px;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
   border-bottom-left-radius: 5% 15%;
@@ -77,16 +77,49 @@ header.top-header {
   
 header.top-header > h2 {
   text-align: center;
-  padding-top: 4em;
+  padding-top: 5em;
   color: rgba(255, 255, 255, 0.553);
   font-size: 35px;
 }
 
-
 @media (min-width: 768px) {
   header.top-header > h2 {
-    font-size: 45px;
-    padding-top: 4em
+    font-size: 40px;
+    padding-top: 6em
   }}
 
-
+  header.top-header-alt { 
+    background-image: url(/assets/img/banner2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 300px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius: 5% 10%;
+    border-bottom-right-radius: 5% 10%;
+  } 
+  
+  @media only screen and (max-width: 768px) {
+    .header.top-header-alt {
+      background-attachment: scroll;
+    }
+  }
+    
+  header.top-header-alt > h2 {
+    text-align: center;
+    padding: 4em;
+    color: rgba(255, 255, 255, 0.211);
+    font-size: 35px;
+  }
+  
+  @media (min-width: 768px) {
+    header.top-header-alt > h2 {
+      font-size: 45px;
+      padding: 4em
+    }}
+  
