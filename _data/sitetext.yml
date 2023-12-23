@@ -59,8 +59,8 @@ en: &DEFAULT_EN
         desc: "Launched **venture studio** to streamline work being done alongside accelerators, incubators and innovation labs"
         image: assets/img/timeline/3.png
         alt: image alt text
-      - title: "2023"
-        year: "Phase Two: Expansion"
+      - title: "Phase Two: Expansion"
+        year: "2023"
         desc: "Piloted initial **in-house projects**, including Delé Atelier (All-Purpose Athleisure) and Take Charge (Energy Management Advocacy)"
         image: assets/img/timeline/4.png
         alt:

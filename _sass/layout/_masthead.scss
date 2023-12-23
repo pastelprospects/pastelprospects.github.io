@@ -56,7 +56,7 @@ header.masthead {
 header.top-header { 
   background-image: url(/assets/img/banner.jpg);
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -71,7 +71,7 @@ header.top-header {
 
 @media only screen and (max-width: 768px) {
   .header.top-header {
-    background-attachment: scroll;
+    background-attachment: inherit;
   }
 }
   
