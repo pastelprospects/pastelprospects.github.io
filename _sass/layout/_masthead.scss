@@ -63,7 +63,7 @@ header.top-header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 325px;
+  height: 275px;
   border-top-left-radius:5px;
   border-top-right-radius:5px;
   border-bottom-left-radius: 5% 15%;
@@ -88,7 +88,7 @@ header.top-header > h2 {
 @media (min-width: 768px) {
   header.top-header > h2 {
     font-size: 40px;
-    padding-top: 6em;
+    padding-top: 5em;
   }}
 
   header.top-header-alt { 
@@ -100,7 +100,7 @@ header.top-header > h2 {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    height: 325px;
+    height: 275px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     border-bottom-left-radius: 5% 15%;
@@ -125,6 +125,6 @@ header.top-header > h2 {
   @media (min-width: 768px) {
     header.top-header-alt > h2 {
       font-size: 40px;
-      padding-top: 6em
+      padding-top: 5em
     }}
   
