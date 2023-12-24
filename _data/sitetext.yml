@@ -33,7 +33,7 @@ en: &DEFAULT_EN
 
   portfolio:
     title: "[Portfolio](/ventures)"
-    text: "Firms Shaping the Future"
+    text: "Firms Defining the Future"
     section: portfolio
     closebutton: "Close"
 
@@ -130,8 +130,8 @@ en: &DEFAULT_EN
         site: "Privacy"
       - url: /terms-of-use
         site: "Terms"
-      - url: /subscribe
-        site: "Subscribe"
+      - url: /newsletter
+        site: "Newsletter"
       - url: /ventures
         site: "Ventures"
     social:
