@@ -6,7 +6,7 @@
 	    {% for client in site.data.sitetext[site.locale].clients.list %}
         <div class="col-md-3 col-sm-2">
           <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer">
-            <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" style="max-height: {{ site.data.sitetext[site.locale].clients.max-height | default: "100px" }}" width="80%">
+            <img class="img-fluid d-block mx-auto" src="{{ client.logo }}" alt="{{ client.title }}" style="max-height: {{ site.data.sitetext[site.locale].clients.max-height | default: "100px" }}">
           </a>
         </div>
 	    {% endfor %}
