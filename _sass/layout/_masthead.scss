@@ -10,6 +10,7 @@ header.masthead {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
   
    header.masthead .intro-text {
@@ -67,6 +68,7 @@ header.top-header {
   border-top-right-radius:5px;
   border-bottom-left-radius: 5% 15%;
   border-bottom-right-radius: 5% 15%;
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 } 
 
 @media only screen and (max-width: 768px) {
@@ -103,6 +105,7 @@ header.top-header > h2 {
     border-top-right-radius:5px;
     border-bottom-left-radius: 5% 15%;
     border-bottom-right-radius: 5% 15%;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
   } 
   
   @media (min-width: 768px) {
@@ -113,7 +116,7 @@ header.top-header > h2 {
     
   header.top-header-alt > h2 {
     text-align: center;
-    padding: 3.5em;
+    padding-top: 4em;
     color: rgba(255, 255, 255, 0.211);
     font-size: 30px;
     text-transform: uppercase;
@@ -122,6 +125,6 @@ header.top-header > h2 {
   @media (min-width: 768px) {
     header.top-header-alt > h2 {
       font-size: 40px;
-      padding: 6em
+      padding-top: 6em
     }}
   
