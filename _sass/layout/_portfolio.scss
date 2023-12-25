@@ -142,10 +142,10 @@
   }
 }
 
-.carousel { overflow: hidden; padding-bottom: 10rem; }
+.carousel { overflow: hidden; padding-bottom: 10rem; margin: 2.5%}
 .carousel-item {box-shadow: 2px 8px 10px 0 rgba(22, 22, 26, 0.18); border-radius: 50%;}
 .carousel-caption { top: 100%; }
-.carousel-inner { overflow: visible; }
+.carousel-inner { overflow: visible; padding: 10px;}
 .carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 2rem; }
 .carousel .carousel-indicators li {  background-color: gray; }
 .carousel .carousel-indicators li.active { background-color: rgb(144, 199, 207); }

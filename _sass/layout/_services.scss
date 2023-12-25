@@ -13,7 +13,6 @@
 }
 
 .card-horizontal {
-  display: grid;
   grid-template-columns: 50% 1fr;
   grid-template-rows: 100% 0;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
@@ -21,11 +20,12 @@
 
 .img-square-wrapper {
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  grid-row: 1/3;
 }
 
-@media (min-width: 500px) {
-  .img-square-wrapper {
-    grid-row: 1/3;
+@media (min-width: 600px) {
+  .card-horizontal {
+    display: grid;
   }
 }
 
