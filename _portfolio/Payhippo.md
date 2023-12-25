@@ -1,7 +1,7 @@
 ---
 caption: #what displays in the portfolio grid:
   title: Payhippo
-  subtitle: SME Lending Platform
+  subtitle: SME Lending
   thumbnail: assets/img/portfolio/pay-logo.png
 
 site: http://payhippo.ng

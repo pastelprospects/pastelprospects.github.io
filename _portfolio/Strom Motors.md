@@ -1,7 +1,7 @@
 ---
 caption: #what displays in the portfolio grid:
   title: Strom Motors
-  subtitle: Mobility
+  subtitle: Commuter Mobility
   thumbnail: assets/img/portfolio/Strom-logo.png
 
 site: http://strommotors.com

@@ -11,7 +11,7 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Pastel Venture Studio
+    title: Pastel Prospects
     text: "Built With Purpose, Different By Design"
     button: Learn More
     buttonlink: "#timeline"
@@ -28,7 +28,7 @@ en: &DEFAULT_EN
         desc: "Backing D2C and Enterprise solutions within the **eCommerce, FinTech, and CPG** business segments"
         icon: fas fa-store
       - title: "Capital Considerations"
-        desc: "Utilizing capital as a force for progress through **responsible and conscious deployment**"
+        desc: "Utilizing capital as a force for **responsible progress through conscious deployment**"
         icon: fas fa-dollar-sign
 
   portfolio:
@@ -130,8 +130,8 @@ en: &DEFAULT_EN
         site: "Privacy"
       - url: /terms-of-use
         site: "Terms"
-      - url: /newsletter
-        site: "Newsletter"
+      - url: /edits
+        site: "Editorial"
       - url: /ventures
         site: "Ventures"
     social:
