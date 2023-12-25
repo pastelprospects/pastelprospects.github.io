@@ -55,7 +55,7 @@ header.masthead {
     }
 
 header.top-header { 
-  background-image: url(/assets/img/banner/splash.jpg);
+  background-image: url(/assets/img/banner/smear.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center top;
@@ -80,7 +80,7 @@ header.top-header {
 header.top-header > h2 {
   text-align: center;
   padding-top: 5em;
-  color: rgba(255, 255, 255, 0.305);
+  color: rgba(255, 255, 255, 0.255);
   font-size: 35px;
   text-transform: uppercase;
 }
@@ -117,7 +117,7 @@ header.top-header > h2 {
   header.top-header-alt > h2 {
     text-align: center;
     padding-top: 5em;
-    color: rgba(255, 255, 255, 0.145);
+    color: rgba(255, 255, 255, 0.175);
     font-size: 40x;
     text-transform: uppercase;
   }
