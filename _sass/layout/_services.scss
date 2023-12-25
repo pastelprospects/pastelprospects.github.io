@@ -18,15 +18,21 @@
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
-.img-square-wrapper {
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  grid-row: 1/3;
-}
-
 @media (min-width: 600px) {
+  .card-body {
+    margin: 15px;
+  }  
   .card-horizontal {
     display: grid;
   }
+  .img-square-wrapper {
+    margin: 35px;
+  }
+}
+
+.img-square-wrapper {
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  grid-row: 1/3;
 }
 
 .img-fluid {
