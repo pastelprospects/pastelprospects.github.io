@@ -4,16 +4,48 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].about.title | default: "About Us" }}</h2>
+        <h2 class="section-heading text-uppercase">{{ site.data.sitetext[site.locale].about.title | default: "About" }}</h2>
         <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].about.text | default: "" }}</h3>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="large text-muted">{{ site.data.sitetext[site.locale].about.body | markdownify }}</div>
+        </div>
       </div>
     </div>
-  </div>
+  <div class="card-flex">
+    <div class="row">
+      <div class="col-md-6" style="margin: 15px;">
+        <div class="card" style="width: 425px;">
+          <img src="/assets/img/blog/Energy Storage/cover.jpg" class="d-block w-100 rounded" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Energy Storage: Building Energy-Efficient Systems</h5>
+               <p class="card-text">~4 min read</p>
+              <a class="btn btn-primary" href="https://medium.com/take-charge/energy-storage-building-energy-efficient-systems-c874a0316454" target="_blank" rel="noopener noreferrer">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+  <div class="row">
+    <div class="col-md-6" style="margin: 15px;">
+      <div class="card" style="width: 425px;">
+        <img src="/assets/img/blog/Battery Basics/cover.jpg" class="d-block w-100 rounded" alt="">
+          <div class="card-body">
+            <h5 class="card-title">EV Battery Basics: Powering Electric Motors</h5>
+              <p class="card-text">~4 min read</p>
+                <a class="btn btn-primary" href="https://medium.com/take-charge/ev-battery-basics-powering-electric-motors-176690c2a40c" target="_blank" rel="noopener noreferrer">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+      <div>
+        <a class="btn btn-primary mx-auto" style="justify-content: center; align-items: center; display: flex; width: 45%; background-color: rgba(90, 164, 152, 0.501); border: none;" href="/edits">Editorial</a>
+      </div>
 </section>
 {% else %}
 <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
