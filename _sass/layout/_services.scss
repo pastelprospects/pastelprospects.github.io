@@ -20,6 +20,11 @@
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
+.card-flex {
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 500px) {
   .card-body {
     margin: 10px;
@@ -27,13 +32,8 @@
   .card-horizontal {
     display: grid;
   }
-}
-
-@media (min-width: 500px) {
   .card-flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
 
