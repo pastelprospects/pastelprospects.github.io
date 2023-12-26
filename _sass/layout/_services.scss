@@ -29,10 +29,12 @@
   }
 }
 
-.card-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 500px) {
+  .card-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .img-square-wrapper {
