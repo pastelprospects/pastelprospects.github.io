@@ -15,7 +15,7 @@ permalink: /ventures
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" style="margin-bottom: 45px;" href="/#overview">Overview</a>  
         </div>
         <div class="col-md-6">
-          <img class="img-fluid" src="assets/img/misc/group.jpg" alt="" width="90%" style="border-radius: 5%;">
+          <img class="img-fluid" src="assets/img/misc/group.jpg" alt="" width="90%" style="border-radius: 2.5%;">
           </div>
       </div>
     </section>
@@ -30,14 +30,14 @@ permalink: /ventures
     </div>
     <div class="row">
 	{% for project in site.portfolio %}
-      <div class="col-md-4 col-sm-6 portfolio-item">
+      <div class="col-md-4 col-sm-6 portfolio-item" style="padding: 10px;">
         <a class="portfolio-link rounded" data-toggle="modal" href="#p{{ forloop.index }}">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="{{ site.data.style.portfolio-icon | default: "fas fa-plus fa-3x" }}"></i>
             </div>
           </div>
-          <img class="img-fluid rounded" src="{{ project.caption.thumbnail }}" alt="">
+          <img class="img-fluid rounded" src="{{ project.caption.thumbnail }}" alt="" style="box-shadow: 2px 4px 6px 0 rgba(130, 130, 130, 0.18);">
         </a>
         <div class="portfolio-caption rounded">
           <h4><a href="{{ project.site }}" target="_blank" rel="noopener noreferrer">{{ project.caption.title }}</a></h4>
