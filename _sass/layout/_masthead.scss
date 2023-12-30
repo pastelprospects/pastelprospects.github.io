@@ -13,10 +13,11 @@ header.masthead {
   box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
-@media only screen and (max-device-width: 1366px) {
-  .header.masthead {
-      background-attachment: scroll;
- }
+@media screen and (max-width: 979px) {
+  header.masthead {
+      background-attachment: fixed !important;
+      background-size: 100vh auto !important;
+  }
 }
 
    header.masthead .intro-text {
