@@ -4,7 +4,7 @@ header.masthead {
   color: white;
   background-image: url("#{$header-image}");
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -12,7 +12,13 @@ header.masthead {
   -o-background-size: cover;
   box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
-  
+
+@media only screen and (max-device-width: 1366px) {
+  .header.masthead {
+      background-attachment: scroll;
+ }
+}
+
    header.masthead .intro-text {
       padding-top: 125px;
       padding-bottom: 75px;
