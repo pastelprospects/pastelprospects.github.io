@@ -19,8 +19,8 @@ en: &DEFAULT_EN
       section: team
     - title: "Portfolio"
       section: portfolio
-    - title: "Posts"
-      section: posts
+    - title: "Projects"
+      section: projects
     - title: "Subscribe"
       section: contact
 en-US:

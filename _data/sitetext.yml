@@ -69,10 +69,10 @@ en: &DEFAULT_EN
     end: "More <br> to <br> Come!"
 
   about:
-    title: "Posts"
-    text: "Snippets from Our Editorial"
+    title: "Projects"
+    text: "In-House Developments"
     body: ""
-    section: posts
+    section: projects
 
   clients:
     section: clients

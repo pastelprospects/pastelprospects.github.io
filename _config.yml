@@ -21,7 +21,7 @@
   description: "Purposefully designing a more equitable and sustainable future alongside exceptional founders"
   author     : S. Remy Ekanem
   logo:     #optional, defaults to site title
-    path: assets\img\pastel.png
+    path: assets\img\logos\pastel.png
     height: 60px #height in px, defaults to 52px
 
   locale: "en-US" # See available languages in _data/sitetext.yml

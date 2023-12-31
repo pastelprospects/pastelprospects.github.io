@@ -12,6 +12,7 @@
   border-color: rgb(255, 255, 255);
   margin: 0 .5em;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  margin-right: 30px;
 }
 
 .card-horizontal {
@@ -24,6 +25,7 @@
   align-items: center;
   justify-content: center;
   display: grid;
+  padding: 15px;
 }
 
 @media (min-width: 500px) {

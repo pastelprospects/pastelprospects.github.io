@@ -47,7 +47,39 @@ permalink: /ventures
 	{% endfor %}
     </div>
   </div>
-</section>
+  </section>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heading text-uppercase">Exits</h2>
+    </div>
+  <div id="fawesome-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#fawesome-carousel" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#fawesome-carousel" data-bs-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active" style="border-radius: 5%;">
+        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/Exits/Agora.png" alt="" onContextMenu="return false;">
+          <div class="carousel-caption d-md-block"  style="color: grey;">
+              <h5>Agora</h5>
+                <p>Supply Logistics</p>
+            </div>
+          </div>
+      <div class="carousel-item" style="border-radius: 5%;">
+        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/Exits/Strom-logo.png" alt="" onContextMenu="return false;">
+          <div class="carousel-caption d-md-block" style="color: grey;">
+              <h5>STROM Motors</h5>
+                <p>Commuter Mobility</p>
+            </div>
+          </div>
+    </div>
+      <a class="left slide-control" href="#fawesome-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right slide-control" href="#fawesome-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+    </div>
+    <style type="text/css">
+      .slide-control{color:#4d4d4d8d;font-size:80px;left:30px;margin-top:-70px;position:absolute;top:50%;}
+      .slide-control.right{left:auto;right:30px;}
+    </style>
 <aside>
   <div class="text-center">
       <div class="center">
@@ -57,6 +89,7 @@ permalink: /ventures
 </aside>
 <br>
 <br>
+</div>
 
 {% else %}
 <section class="bg-light page-section" id="{{ site.data.sitetext.portfolio.section | default: "portfolio" }}">
