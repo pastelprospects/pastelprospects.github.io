@@ -55,13 +55,13 @@ We have no control over and assume no responsibility for the content, privacy po
 
 **COOKIES**
 
-To enrich your online experience, Pastel Prospects uses "Cookies", similar technologies and services provided by others to display personalized content, appropriate advertising, and to store your preferences on your computer.
+To enrich your online experience, Pastel Prospects may use "Cookies," similar technologies, and services provided by others, to display personalized content, appropriate advertising, and to store your preferences on your computer.
 
 A cookie is a string of information that a website stores on a visitor’s computer, and that the visitor’s browser provides to the website each time the visitor returns. Pastel Prospects uses cookies to help identify and track visitors, their usage of the Website, and their website access preferences. Pastel Prospects visitors who do not wish to have cookies placed on their computers should either opt-out of  Cookie Settings where appropriate or set their browsers to refuse cookies before using Pastel Prospects’ websites, with the drawback that certain features of the Website may not function properly without the aid of cookies.
 
 By continuing to navigate our website without changing your cookie settings, you hereby acknowledge and agree to Pastel Prospects' use of cookies.
 
-You can find more details on the exact cookies that this Squarespace website uses here. This website has been configured to disable Analytics and Performance Cookies unless you click the acceptance button on the Cookie Notice.
+You can find more details on the exact cookies that this website uses here. This website has been configured to disable any Analytics and Performance Cookies unless you click the acceptance button on the Cookie Notice.
 
 
 **PERSONAL INFORMATION WE COLLECT**
