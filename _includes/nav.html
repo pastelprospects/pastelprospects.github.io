@@ -10,6 +10,7 @@
       <img
         height="{{ site.logo.height | default: 52 }}"
         src="{{ site.logo.path }}"
+        onContextMenu="return false;"
       />
       {%- else -%} {{ site.title }} {%- endif -%}
     </a>
