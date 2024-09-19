@@ -13,22 +13,22 @@ en: &DEFAULT_EN
   header:
     title: Pastel Prospects
     text: "Built With Purpose, Different By Design"
-    button: Learn More
-    buttonlink: "#timeline"
+    # button: Learn More
+    # buttonlink: "#timeline"
 
   services:
     title: "Overview"
-    text: "A Differentiated Approach"
+    text: "A Holistic Approach"
     section: overview
     list:
       - title: "Partnerships"
-        desc: "Cultivating **meaningful relationships with exceptional founders** at the earliest stages of their entrepreneurial journey"
+        desc: "**Meaningful relationships with founders** throughout their entrepreneurial journey"
         icon: fas fa-handshake #find more at https://fontawesome.com/icons
-      - title: "Industries of Interest"
-        desc: "Backing D2C and Enterprise solutions within the **eCommerce, FinTech, and CPG** business segments"
+      - title: "Areas of Interest"
+        desc: "**Industry-agnostic approach** with an inclination towards mindful opportunities"
         icon: fas fa-store
       - title: "Capital Considerations"
-        desc: "Utilizing capital as a force for **responsible progress through conscious deployment**"
+        desc: "**Conscious deployment of capital** to promote responsible and sustainable progress"
         icon: fas fa-dollar-sign
 
   portfolio:
@@ -44,19 +44,19 @@ en: &DEFAULT_EN
     # left is the default
     #start_align: "left"
     events:
-      - title: "Humble Beginnings"
+      - title: "Early Days"
         year: "2020"
-        desc: "Founded Pastel as a dedicated **design and development agency** to support underrepresented founders from historically marginalized communities"
+        desc: "Founded Pastel (PSTL) as a **design and development agency** partnering with underrepresented founders"
         image: assets/img/timeline/1.png
         alt:
       - title: "New Heights"
         year: "2021"
-        desc: "Co-founded MAVP as a **venture scouting platform** to deploy and participate in rounds led by institutional investors"
+        desc: "Co-founded MAVP as a **scouting platform** to support fundraising activities and opportunities"
         image: assets/img/timeline/2.png
         alt:
       - title: "Phase One: Incubation"
         year: "2022"
-        desc: "Launched **venture studio** to streamline work being done alongside accelerators, incubators and innovation labs"
+        desc: "Launched **design studio** to streamline workflow alongside accelerators, incubators and innovation labs"
         image: assets/img/timeline/3.png
         alt: image alt text
       - title: "Phase Two: Expansion"
@@ -95,7 +95,7 @@ en: &DEFAULT_EN
   team:
     title: "Team"
     text: "Nimble & Agile"
-    subtext: Building a More Equitable and Sustainable Future
+    subtext: "*'Building a More Equitable and Sustainable Future'*"
     section: team
     people:
       - name: "Samuel Ekanem"
@@ -106,8 +106,6 @@ en: &DEFAULT_EN
             icon: fab fa-linkedin-in
           - url: https://medium.com/@samuelekanem
             icon: fab fa-medium
-          - url: https://twitter.com/sammypastel
-            icon: fab fa-twitter
 
   contact:
     title: "[Subscribe](/subscribe)"
