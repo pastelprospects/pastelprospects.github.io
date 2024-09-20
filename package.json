@@ -4,6 +4,7 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "localhost": "^0.4.1"
+    "localhost": "^0.4.1",
+    "pagecrypt": "^6.1.1"
   }
 }
