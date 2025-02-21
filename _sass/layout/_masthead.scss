@@ -20,17 +20,16 @@ header.mast video {
 header.mast .intro-text {
   position: relative; /* Bring text in front of video */
   z-index: 1; /* Ensure text is above video */
-  margin-top: 75px;
+  margin-top: 25px;
   /* Add a semi-transparent background to improve text readability if needed */
   // background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as desired */
   padding: 20px; /* Add some padding around the text */
 }
-
     
 header.mast .intro-lead-in {
   font-size: 32px;
   margin-bottom: 25px;
-  padding-top: 75px;
+  padding-top: 25px;
   padding-bottom: 25px;
   @include serif-font;
 }
@@ -38,7 +37,7 @@ header.mast .intro-lead-in {
 header.mast .intro-head {
   white-space: normal;
   display: flex;
-  padding-top: 75px;
+  padding-top: 55px;
   padding-left: 150px;
   padding-right: 150px;
   font-size: 55px;
@@ -60,9 +59,25 @@ header.mast .intro-head {
 
 @media (max-width: 575px) {
   header.mast .intro-head {
-    font-size: 35px;
+    font-size: 30px;
     padding-top: 105px;
   }
+}
+
+.mast {
+  position: relative; /* Needed for absolute positioning of the container */
+  overflow: hidden; /* Hide video overflow */
+  height: 100vh; /* Or your desired height */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.mast .container {
+  text-align: center; /* Center text within the container */
+  /* Add any other container styles you need */
+  position: relative; /* So that z-index works */
+  z-index: 1; /* Bring container forward */
 }
 
 header.masthead {
