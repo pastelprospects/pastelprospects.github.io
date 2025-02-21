@@ -46,6 +46,7 @@
     }
     .timeline-image {
       position: absolute;
+      opacity: 0.85;
       z-index: 100;
       left: 0;
       width: 80px;
@@ -85,9 +86,10 @@
     }
   }
   .timeline-heading {
+    padding-top: 25px;
     h4 {
       margin-top: 0;
-      color: inherit;
+      color: rgb(0, 95, 95);
       &.subheading {
         text-transform: none;
       }

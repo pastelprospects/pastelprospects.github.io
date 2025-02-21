@@ -46,13 +46,14 @@
   <!-- End Navigation -->
   
   <!-- Header -->
-  {% if site.locale and site.locale != "" and site.locale != nil %}
+  <!-- {% if site.locale and site.locale != "" and site.locale != nil %}
   <header class="masthead">
     <div class="container">
       <div class="intro-text">
 	  {%- if site.data.sitetext[site.locale].header.title -%}
         <div class="intro-lead-in">{{ site.data.sitetext[site.locale].header.title | markdownify }}</div>
 	  {%- endif -%}
+      <img src="/assets/img/logos/PSTL.png" style="width: 225px;"></img>
 	  {%- if site.data.sitetext[site.locale].header.text -%}
         <div class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text | markdownify }}</div>
 	  {%- endif -%}
@@ -78,5 +79,17 @@
       </div>
     </div>
   </header>
-  {% endif %}
+  {% endif %} -->
+
+  <header class="masthead">
+    <video autoplay muted loop>  <source src="/assets/vid/night sky.mp4" type="video/mp4">
+      <source src="/assets/vid/night sky.mp4" type="video/webm">  Your browser does not support the video tag.  </video>
+    <div class="intro-text">
+        <div class="intro-lead-in" style="animation: fadeIn 2s ease-in-out;">Pastel Prospects</div>
+        <img src="/assets/img/logos/PSTL.png" style="width: 200px;"></img>
+        <div class="intro-head text-uppercase" style="animation: fadeIn 4s ease-in-out;">Empowering <br> Creators &<br>Innovators</div>
+        <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Learn More</a> -->
+    </div>
+  </header>
+
   <!-- End Header -->

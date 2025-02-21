@@ -12,24 +12,27 @@
 en: &DEFAULT_EN
   header:
     title: Pastel Prospects
-    text: "Built With Purpose, Different By Design"
+    text: "Empowering Creators & Innovators"
     # button: Learn More
     # buttonlink: "#timeline"
 
   services:
     title: "Overview"
-    text: "A Holistic Approach"
+    text: "The Basics"
     section: overview
     list:
+      - title: "Prototypes"
+        desc: "**Designing frameworks and solutions** from inception to deployment"
+        icon: fas fa-laptop
+        image: assets/img/overview/2.png
       - title: "Partnerships"
-        desc: "**Meaningful relationships with founders** throughout their entrepreneurial journey"
+        desc: "**Collaborating with founders** at the earliest stages of their entrepreneurial journey"
         icon: fas fa-handshake #find more at https://fontawesome.com/icons
-      - title: "Areas of Interest"
-        desc: "**Industry-agnostic approach** with an inclination towards mindful opportunities"
-        icon: fas fa-store
-      - title: "Capital Considerations"
-        desc: "**Conscious deployment of capital** to promote responsible and sustainable progress"
-        icon: fas fa-dollar-sign
+        image: assets/img/overview/2.png
+      - title: "Pivots"
+        desc: "**Developing product roadmaps** to align features with intended use cases"
+        icon: fas fa-route
+        image: assets/img/overview/2.png
 
   portfolio:
     title: "Portfolio"
@@ -38,39 +41,28 @@ en: &DEFAULT_EN
     closebutton: "Close"
 
   timeline:
-    title: "Timeline"
-    text: "Snapshot Over Time"
-    section: timeline
+    title: "Platforms"
+    text: "Our Approach"
+    section: platforms
     # left is the default
     #start_align: "left"
     events:
-      - title: "Early Days"
-        year: "2020"
-        desc: "Founded Pastel (PSTL) as a **design and development agency** partnering with underrepresented founders"
+      - title: "Studio"
+        desc: "Ideation, creation, and refinement of market-ready products and services"
         image: assets/img/timeline/1.png
         alt:
-      - title: "New Heights"
-        year: "2021"
-        desc: "Co-founded MAVP as a **scouting platform** to support fundraising activities and opportunities"
+      - title: "Agency"
+        desc: "Support services on behalf of our founding partners and broader portfolio"
         image: assets/img/timeline/2.png
         alt:
-      - title: "Phase One: Incubation"
-        year: "2022"
-        desc: "Launched **venture studio** to streamline workflow alongside accelerators, incubators and innovation labs"
+      - title: "Scout"
+        desc: "Coordination of capital partners and syndicates to support fundraising initiatives"
         image: assets/img/timeline/3.png
-        alt: image alt text
-      - title: "Phase Two: Expansion"
-        year: "2023"
-        desc: "Piloted initial **in-house projects**, including Delé Atelier (All-Purpose Athleisure) and Take Charge (Energy Management Advocacy)"
-        image: assets/img/timeline/4.png
         alt:
-        # you can enforce the alignment
-        align: right
-    end: "More <br> to <br> Come!"
 
   about:
     title: "Projects"
-    text: "In-House Developments"
+    text: "In-House Development"
     body: ""
     section: projects
 
@@ -91,21 +83,6 @@ en: &DEFAULT_EN
       - title: "Dribbble"
         url: https://dribbble.com
         logo: assets/img/clients/Drib.png
-
-  team:
-    title: "Team"
-    text: "Nimble & Agile"
-    subtext: "*'Building a More Equitable and Sustainable Future'*"
-    section: team
-    people:
-      - name: "Samuel Ekanem"
-        role: "Founder, Principal"
-        image: assets/img/team/1.jpg
-        social:
-          - url: https://www.linkedin.com/in/samuel-ekanem/
-            icon: fab fa-linkedin-in
-          - url: https://medium.com/@samuelekanem
-            icon: fab fa-medium
 
   contact:
     title: "[Subscribe](/subscribe)"
@@ -128,17 +105,13 @@ en: &DEFAULT_EN
         site: "Privacy"
       - url: /terms-of-use
         site: "Terms"
-      - url: /edits
-        site: "Editorial"
       - url: /ventures
         site: "Ventures"
     social:
       - url: https://www.linkedin.com/company/pastel-venture-studio/about/
         icon: "fab fa-linkedin-in"
-      - url: https://instagram.com/pastel.plug
-        icon: "fab fa-instagram"
-      - url: https://github.com/pastelprospects
-        icon: "fab fa-github"
+      - url: https://medium.com/take-charge
+        icon: "fab fa-medium"
 en-US:
   <<: *DEFAULT_EN
 en-CA:

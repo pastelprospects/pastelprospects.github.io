@@ -1,6 +1,6 @@
 <!-- Contact -->
 {% if site.locale and site.locale != "" and site.locale != nil %}
-<section class="page-section" id="{{ site.data.sitetext[site.locale].contact.section | default: "contact" }}">
+<section class="page-section" id="{{ site.data.sitetext[site.locale].contact.section | default: "contact" }}">  
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -8,7 +8,7 @@
           {{ site.data.sitetext[site.locale].contact.title | markdownify | default: Contact Us }}</h2>
         <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 2px rgba(115, 115, 115, 0.35);">{{ site.data.sitetext[site.locale].contact.text | default: "" }}</h3>
       </div>
-    </div>
+    </div>    
     <div class="row">
       <div class="col-lg-12">
         <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
@@ -76,7 +76,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </div>  
 </section>
 {% endif %}
 <!-- End Contact -->

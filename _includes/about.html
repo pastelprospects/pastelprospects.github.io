@@ -1,4 +1,15 @@
 <!-- About -->
+<style>
+  .card-flex .card img {
+      transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
+    }
+  
+    .card-flex .card img:hover, /* Optional: Magnify on hover too */
+    .card-flex .card img.magnified { /* Class added by JS */
+      transform: scale(1.1); /* Adjust scale factor as desired */
+    }
+  </style>
+
 {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="page-section" id="{{ site.data.sitetext[site.locale].about.section | default: "about" }}">
   <div class="container">
@@ -16,64 +27,26 @@
     </div>
   </div>
       <div class="card-flex">
-        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 25px; margin-left: 25px;">
-          <img src="/assets/img/logos/dele.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;">
-            <div class="card-body text-center" style="padding-top: 35px;">
-              <a href="https://www.deleapparel.com" target="_blank" rel="noopener noreferrer">
+        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
+          <a href="https://www.deleatelier.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/logos/dele.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;"></a>
+              <div class="card-body text-center" style="padding-top: 35px;">
                 <h5 class="card-title text-uppercase">Delé Atelier</h5>
-                <p class="card-text">All-Purpose Athleisure</p></a>
+                <p class="card-text" style="color: grey;">All-Purpose Athleisure</p>
             </div>
           </div>
       <br>
-        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 25px; margin-left: 25px;">
-          <img src="/assets/img/logos/take charge.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;">
-            <div class="card-body text-center" style="padding-top: 35px;">
-              <a href="https://medium.com/@samuelekanem" target="_blank" rel="noopener noreferrer">
+        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
+          <a href="https://medium.com/take-charge" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/logos/take charge.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;"></a>
+              <div class="card-body text-center" style="padding-top: 35px;">
                 <h5 class="card-title text-uppercase">Take Charge</h5>
-                <p class="card-text">Energy Management Advocacy</p></a>
+                <p class="card-text" style="color: grey;">Energy Management Advocacy</p>
             </div>
           </div>
         </div>
       <br>
       <br>
-
-  <div class="card-flex">
-    <div class="card" style="width: 350px;">
-      <img src="/assets/img/blog/Green Transition/cover.jpg" class="d-block w-100 rounded" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5);" onContextMenu="return false;">
-        <div class="card-body" style="border-color: transparent;">
-          <h5 class="card-title">Green Transition: Sustainable Revolution...</h5>
-            <p class="card-text">~5 min read</p>
-          <a class="btn btn-primary" href="https://medium.com/take-charge/green-transition-sustainable-revolution-through-localized-grids-440f4ca66962" target="_blank" rel="noopener noreferrer">Read More</a>
-        </div>
-      </div>
-  <br>
-    <div class="card" style="width: 350px;">
-      <img src="/assets/img/blog/Energy Storage/cover.jpg" class="d-block w-100 rounded" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5);" onContextMenu="return false;">
-        <div class="card-body">
-          <h5 class="card-title">Energy Storage: Building Energy-Efficient Systems</h5>
-            <p class="card-text">~4 min read</p>
-          <a class="btn btn-primary" href="https://medium.com/take-charge/energy-storage-building-energy-efficient-systems-c874a0316454" target="_blank" rel="noopener noreferrer">Read More</a>
-        </div>
-      </div>
-  <br>
-    <div class="card" style="width: 350px;">
-      <img src="/assets/img/blog/Battery Basics/cover.jpg" class="d-block w-100 rounded" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5);" onContextMenu="return false;">
-        <div class="card-body">
-          <h5 class="card-title">EV Battery Basics: Powering Electric Motors</h5>
-            <p class="card-text">~4 min read</p>
-              <a class="btn btn-primary" href="https://medium.com/take-charge/ev-battery-basics-powering-electric-motors-176690c2a40c" target="_blank" rel="noopener noreferrer">Read More</a>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-          <br>
-            <br>
-              <div>
-                <a class="btn btn-primary mx-auto" style="justify-content: center; align-items: center; display: flex; width: 45%; background-color: rgba(90, 164, 152, 0.501); border: none;" href="/edits">Editorial</a>
-              </div>
-            </div>
-          </div>
 </section>
 {% else %}
 <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
@@ -92,4 +65,23 @@
   </div>
 </section>
 {% endif %}
+
+<script>
+  const timelineImages = document.querySelectorAll('.card-flex .card img');
+
+  timelineImages.forEach(image => {
+    let isMagnified = false; // Track magnification state
+
+    image.addEventListener('mouseover', () => {
+      if (!isMagnified) { // Only magnify if not already magnified
+        image.classList.add('magnified');
+      }
+    });
+
+    image.addEventListener('mouseout', () => {
+      image.classList.remove('magnified');
+      isMagnified = false; // Reset magnification state
+    });
+  });
+</script>
 <!-- End About -->

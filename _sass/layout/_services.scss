@@ -2,6 +2,7 @@
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+  color: rgb(0, 95, 95);
 }
 
 .service.icon {
@@ -10,7 +11,7 @@
 
 .card {
   border-color: rgb(255, 255, 255);
-  margin: 0 .5em;
+  margin: 0 0.75em;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
@@ -27,7 +28,7 @@
   padding: 15px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
   .card-body {
     margin: 10px;
   }  
