@@ -1,5 +1,5 @@
 // Styling for the masthead
-header.masthead {
+header.mast {
   text-align: center;
   color: white;
   position: relative; /* Needed for absolute positioning of video */
@@ -7,7 +7,7 @@ header.masthead {
   height: 100vh; /* Define your desired height */; /* e.g., 500px or 100vh */
 }
 
-header.masthead video {
+header.mast video {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@ header.masthead video {
   z-index: -1; /* Place video behind content */
 }
 
-header.masthead .intro-text {
+header.mast .intro-text {
   position: relative; /* Bring text in front of video */
   z-index: 1; /* Ensure text is above video */
   margin-top: 75px;
@@ -26,7 +26,16 @@ header.masthead .intro-text {
   padding: 20px; /* Add some padding around the text */
 }
 
-header.masthead .intro-head {
+    
+header.mast .intro-lead-in {
+  font-size: 32px;
+  margin-bottom: 25px;
+  padding-top: 75px;
+  padding-bottom: 25px;
+  @include serif-font;
+}
+
+header.mast .intro-head {
   white-space: normal;
   display: flex;
   padding-top: 75px;
@@ -50,7 +59,7 @@ header.masthead .intro-head {
 }  
 
 @media (max-width: 575px) {
-  header.masthead .intro-head {
+  header.mast .intro-head {
     font-size: 35px;
     padding-top: 105px;
   }
