@@ -15,6 +15,5 @@ alt: image alt text
 Full-service digital energy management platform that eliminates and repurposes energy waste in buildings
 
 {:.list-inline} 
-- **Year**: 2020
 - **Sector**: ClimateTech
 

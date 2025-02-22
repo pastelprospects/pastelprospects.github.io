@@ -15,6 +15,5 @@ alt: image alt text
 First fully cableless loudspeaker for venues and event spaces
 
 {:.list-inline} 
-- **Year**: 2020
 - **Sector**: IoT (Internet-of-Things)
 

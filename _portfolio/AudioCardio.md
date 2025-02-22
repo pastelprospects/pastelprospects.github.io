@@ -15,6 +15,5 @@ alt: image alt text
 Evidence-based mobile app for hearing loss that delivers inaudible sound therapies
 
 {:.list-inline} 
-- **Year**: 2020
 - **Sector**: HealthTech
 

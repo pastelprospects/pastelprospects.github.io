@@ -15,6 +15,5 @@ alt: image alt text
 Money transfer app that allows users to send and receive money between Africa and other parts of the world
 
 {:.list-inline} 
-- **Year**: 2021
 - **Sector**: FinTech
 

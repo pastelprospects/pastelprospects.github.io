@@ -15,6 +15,5 @@ alt: image alt text
 AI-driven lending platform that provides collateral-free loans to small and medium-sized businesses
 
 {:.list-inline} 
-- **Year**: 2022
 - **Sector**: FinTech
 
