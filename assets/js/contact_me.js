@@ -82,7 +82,7 @@ $('#name').focus(function() {
 });
 
 
-// $(document).ready(function () {
+$(document).ready(function () {
   $('#fawesome-carousel').carousel({
       interval: 4000
   })

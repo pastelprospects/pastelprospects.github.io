@@ -1,21 +1,9 @@
 <!-- Services -->
-<style>
-  /* Initial state: hidden (adjust opacity and transform as needed) */
-  .page-section .service-fade > * { /* Targets direct children of .container */
-    opacity: 0;
-    transform: translateY(60px); /* Optional: slight vertical translation */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  }
-
-  .page-section .service-fade > *.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
 {% if site.locale and site.locale != "" and site.locale != nil %}
-  <section class="page-section" id="{{ site.data.sitetext[site.locale].services.section | default: "services" }}">
-    <div class="container">
+  <section class="page-section services-section" id="{{ site.data.sitetext[site.locale].services.section | default: "services" }}">
+    <div class="services-overlay">
+    </div>
+    <div class="container" style="position: relative; z-index: 2;">
       <div class="row">
         <div class="col-lg-12 text-center service-fade">
           <h2 class="section-heading service-fade text-uppercase">{{ site.data.sitetext[site.locale].services.title | default: "Services" }}</h2>
@@ -24,25 +12,44 @@
 		  {% endif %}
         </div>
       </div>
-      <div class="row text-center">
-	  {% for service in site.data.sitetext[site.locale].services.list %}
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x service-fade">
-            <i class="fas fa-circle fa-stack-2x text-primary service-fade"></i>
-            <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading service-fade">{{ service.title | markdownify }}</h4>
-          {% if service.desc %}<div class="text-muted service-fade" style="padding-bottom: 20px;">{{ service.desc | markdownify }}</div>{% endif %}
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel-wrapper service-fade">
+            <button class="carousel-btn carousel-btn-left" id="prevBtn">‹</button>
+            
+            <div class="carousel-3d-container">
+              <div class="carousel-3d" id="carousel3d">
+                {% for service in site.data.sitetext[site.locale].services.list %}
+                  <div class="carousel-item-3d" data-index="{{ forloop.index0 }}">
+                    <div class="service-icon">
+                      <i class="{{ service.icon | default: "fas fa-shopping-cart" }}"></i>
+                    </div>
+                    <h4 class="service-title">{{ service.title | markdownify }}</h4>
+                    {% if service.desc %}
+                      <div class="service-desc">{{ service.desc | markdownify }}</div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+            <button class="carousel-btn carousel-btn-right" id="nextBtn">›</button>
+          </div>
+          
+          <div class="carousel-indicators-3d service-fade">
+            {% for service in site.data.sitetext[site.locale].services.list %}
+              <div class="indicator {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+            {% endfor %}
+          </div>
         </div>
-	  {% endfor %}
       </div>
 	  
     </div>
   </section>
 {% else %}
-<section class="page-section" id="{{ site.data.sitetext.services.section | default: "services" }}">
-  <div class="container">
-
+<section class="page-section services-section" id="{{ site.data.sitetext.services.section | default: "services" }}">
+  <div class="services-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
+  <div class="container" style="position: relative; z-index: 2;">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">{{ site.data.sitetext.services.title | default: "Services" }}</h2>
@@ -52,17 +59,36 @@
       </div>
     </div>
   
-    <div class="row text-center">
-  {% for service in site.data.sitetext.services.list %}
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="{{ service.icon | default: "fas fa-shopping-cart" }} fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="service-heading">{{ service.title | markdownify }}</h4>
-        {% if service.desc %}<div class="text-muted">{{ service.desc | markdownify }}</div>{% endif %}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="carousel-wrapper service-fade">
+          <button class="carousel-btn carousel-btn-left" id="prevBtn">‹</button>
+          
+          <div class="carousel-3d-container">
+            <div class="carousel-3d" id="carousel3d">
+              {% for service in site.data.sitetext.services.list %}
+                <div class="carousel-item-3d" data-index="{{ forloop.index0 }}">
+                  <div class="service-icon">
+                    <i class="{{ service.icon | default: "fas fa-shopping-cart" }}"></i>
+                  </div>
+                  <h4 class="service-title">{{ service.title | markdownify }}</h4>
+                  {% if service.desc %}
+                    <div class="service-desc">{{ service.desc | markdownify }}</div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+          <button class="carousel-btn carousel-btn-right" id="nextBtn">›</button>
+        </div>
+        
+        <div class="carousel-indicators-3d service-fade">
+          {% for service in site.data.sitetext.services.list %}
+            <div class="indicator {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+          {% endfor %}
+        </div>
       </div>
-  {% endfor %}
     </div>
   
   </div>
@@ -70,20 +96,21 @@
 {% endif %}
 
 <script>
+  // Fade-in animation functionality
   const sections = document.querySelectorAll('.page-section');
 
   function checkVisibility() {
     sections.forEach(section => {
-      const elementsToAnimate = section.querySelectorAll('.service-fade > *'); // Select direct children of .container
+      const elementsToAnimate = section.querySelectorAll('.service-fade > *');
       const triggerPoint = window.innerHeight * 0.8;
       const sectionTop = section.getBoundingClientRect().top;
 
       elementsToAnimate.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < triggerPoint && sectionTop < window.innerHeight) { // Check if element is in view
+        if (elementTop < triggerPoint && sectionTop < window.innerHeight) {
           element.classList.add('visible');
         } else {
-          element.classList.remove('visible'); // Optional: fade out on scroll up
+          element.classList.remove('visible');
         }
       });
     });

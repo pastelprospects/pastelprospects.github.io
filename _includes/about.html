@@ -29,16 +29,16 @@
       <div class="card-flex">
         <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
           <a href="https://www.deleatelier.com" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/logos/dele.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;"></a>
+            <img src="/assets/img/logos/dele.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 8px solid rgb(225, 225, 225, 0.5); filter: grayscale(75%);" onContextMenu="return false;"></a>
               <div class="card-body text-center" style="padding-top: 35px;">
                 <h5 class="card-title text-uppercase">Delé Atelier</h5>
-                <p class="card-text" style="color: grey;">Activewear & Athleisure</p>
+                <p class="card-text" style="color: grey;">Athleisure Lifestyle</p>
             </div>
           </div>
       <br>
         <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
           <a href="https://cassett.xyz" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/logos/cassett.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 4px solid #b0b0b0" onContextMenu="return false;"></a>
+            <img src="/assets/img/logos/cassett.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 8px solid rgb(225, 225, 225, 0.5); filter: grayscale(75%);" onContextMenu="return false;"></a>
               <div class="card-body text-center" style="padding-top: 35px;">
                 <h5 class="card-title text-uppercase">Cassett</h5>
                 <p class="card-text" style="color: grey;">Audio-Visual Journaling</p>
@@ -67,9 +67,9 @@
 {% endif %}
 
 <script>
-  const timelineImages = document.querySelectorAll('.card-flex .card img');
+  const aboutImages = document.querySelectorAll('.card-flex .card img');
 
-  timelineImages.forEach(image => {
+  aboutImages.forEach(image => {
     let isMagnified = false; // Track magnification state
 
     image.addEventListener('mouseover', () => {

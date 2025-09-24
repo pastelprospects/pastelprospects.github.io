@@ -1,17 +1,4 @@
-<!-- About -->
-<style>
-  .timeline .timeline-image img {
-    transition: transform 0.5s ease-in-out;
-    opacity: 1; /* Initially hidden */
-    transform: scale(1); /* Initially smaller */
-  }
-
-  .timeline .timeline-image img.magnified {
-    opacity: 1; /* Visible when magnified */
-    transform: scale(1.25); /* Magnified size */
-  }
-</style>
-
+<!-- Timeline -->
 {% if site.locale and site.locale != "" and site.locale != nil %}
   <section class="bg-light page-section" id="{{ site.data.sitetext[site.locale].timeline.section | default: "about" }}">
     <div class="container">
@@ -133,18 +120,33 @@
 {% endif %}
 
 <script>
-  const timelineImages = document.querySelectorAll('.timeline .timeline-image img');
+  const timelineImages = document.querySelectorAll('.timeline .timeline-image');
+  const timelinePanels = document.querySelectorAll('.timeline .timeline-panel');
 
   function checkVisibility() {
+    // Animate timeline images (vertical ease in/out)
     timelineImages.forEach(image => {
-      const triggerPoint = window.innerHeight * 0.6; // Adjust as needed
+      const triggerPoint = window.innerHeight * 0.8;
       const imageTop = image.getBoundingClientRect().top;
-      const imageBottom = image.getBoundingClientRect().bottom; // Get bottom edge
+      const imageBottom = image.getBoundingClientRect().bottom;
 
-      if (imageTop < triggerPoint && imageBottom > 0.5) { // Check if in view
-        image.classList.add('magnified');
+      if (imageTop < triggerPoint && imageBottom > 0) {
+        image.classList.add('animate-in');
       } else {
-        image.classList.remove('magnified'); // Unmagnify when scrolled past
+        image.classList.remove('animate-in');
+      }
+    });
+
+    // Animate timeline panels (horizontal ease in/out)
+    timelinePanels.forEach(panel => {
+      const triggerPoint = window.innerHeight * 0.7;
+      const panelTop = panel.getBoundingClientRect().top;
+      const panelBottom = panel.getBoundingClientRect().bottom;
+
+      if (panelTop < triggerPoint && panelBottom > 0) {
+        panel.classList.add('animate-in');
+      } else {
+        panel.classList.remove('animate-in');
       }
     });
   }

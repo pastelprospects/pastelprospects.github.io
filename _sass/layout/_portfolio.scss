@@ -1,167 +1,182 @@
-// Styling for the portfolio section
-#portfolio {
-  .portfolio-item {
-    right: 0;
-    margin: 0 0 15px;
-    .portfolio-link {
-      position: relative;
-      display: block;
-      max-width: 400px;
-      margin: 0 auto;
-      cursor: pointer;
-      box-shadow: 2px 4px 6px 0 rgba(110, 110, 110, 0.18);
-      .portfolio-hover {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all ease 0.5s;
-        -moz-transition: all ease 0.5s;
-        transition: all ease 0.5s;
-        opacity: 0;
-        background: fade-out($primary, 0.1);
-        &:hover {
-          opacity: 1;
-        }
-        .portfolio-hover-content {
-          font-size: 20px;
-          position: absolute;
-          top: 50%;
-          width: 100%;
-          height: 20px;
-          margin-top: -12px;
-          text-align: center;
-          color: white;
-          i {
-            margin-top: -12px;
-          }
-          h3,
-          h4 {
-            margin: 0;
-          }
-        }
-      }
-    }
-    .portfolio-caption {
-      max-width: 400px;
-      margin: 10px auto;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 2px 4px 6px 0 rgba(90, 90, 90, 0.18);
-      background-color: $white;
-      h4 {
-        margin: 0;
-        text-transform: none;
-      }
-      p {
-        font-size: 16px;
-        font-style: italic;
-        margin: 0;
-        @include serif-font;
-      }
-    }
-  }
-  * {
-    z-index: 2;
-  }
-}
-@media (min-width: 767px) {
-  #portfolio {
-    .portfolio-item {
-      margin: 0 0 30px;
-    }
-  }
+// Portfolio Carousel Styles
+.portfolio-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%, 
+    rgba(0, 0, 0, 1) 95%,  
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-.portfolio-modal {
-  .modal-dialog {
-    margin: 1rem auto;
-    max-width: 50vw;
+.portfolio-carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: calc(200% + 2rem); // Double width for seamless loop
+  gap: 2rem;
+}
+
+.portfolio-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  a {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: flex;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
   }
-  .modal-content {
-    padding: 25px 0;
-    text-align: center;
-    h2 {
-      font-size: 3em;
-      margin-bottom: 15px;
-    }
-    p {
-      margin-bottom: 30px;
-    }
-    p.item-intro {
-      font-size: 16px;
-      font-style: italic;
-      margin: 20px 0 30px;
-      @include serif-font;
-    }
-    ul.list-inline {
-      margin-top: 0;
-      margin-bottom: 30px;
-    }
-    img {
-      margin-bottom: 30px;
-      box-shadow: 2px 4px 6px 0 rgba(120, 120, 120, 0.18);
-    }
-    button {
-      cursor: pointer;
-    }
+  
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  .close-modal {
+  
+  .portfolio-subtext {
     position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-    background-color: transparent;
-    &:hover {
-      opacity: 0.3;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    
+    h5 {
+      color: rgb(75, 75, 75);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
     }
-    .lr {
-      /* Safari and Chrome */
-      z-index: 1051;
-      width: 1px;
-      height: 75px;
-      margin-left: 35px;
-      /* IE 9 */
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-      background-color: $gray-900;
-      .rl {
-        /* Safari and Chrome */
-        z-index: 1052;
-        width: 1px;
-        height: 75px;
-        /* IE 9 */
-        -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        transform: rotate(90deg);
-        background-color: $gray-900;
+    
+    p {
+      color: #666;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+  
+  &:hover {
+    img {
+      transform: scale(1.5);
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    .portfolio-subtext {
+      opacity: 1;
+      bottom: -70px;
+    }
+  }
+}
+
+// Pause animation on hover
+.portfolio-carousel-container:hover .portfolio-carousel-track {
+  animation-play-state: paused;
+}
+
+// Infinite scroll animation
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: 150px;
+    height: 150px;
+    
+    img {
+      width: 125px;
+      height: 125px;
+    }
+    
+    .portfolio-subtext {
+      bottom: -70px;
+      padding: 0.4rem 0.8rem;
+      
+      h5 {
+        font-size: 0.875rem;
+      }
+      
+      p {
+        font-size: 0.75rem;
       }
     }
+    
+    &:hover .portfolio-subtext {
+      bottom: -60px;
+    }
+  }
+  
+  .portfolio-carousel-track {
+    gap: 1rem;
   }
 }
 
-.carousel { overflow: hidden; padding-bottom: 10rem; margin: 5%}
-.carousel-item {box-shadow: 2px 8px 10px 0 rgba(22, 22, 26, 0.18); border-radius: 50%;}
-.carousel-caption { top: 100%; }
-.carousel-inner { overflow: visible; padding: 5px;}
-.carousel-control-next, .carousel-control-prev, .carousel-indicators { bottom: 2rem; }
-.carousel .carousel-indicators li {  background-color: gray; }
-.carousel .carousel-indicators li.active { background-color: rgb(144, 199, 207); }
-
-
-@media (min-width: 500px) {
-  .carousel-item {width: 40%; justify-content: center; align-content: center; flex-direction: column; margin-left: 30%;}
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: 120px;
+    height: 120px;
+    
+    img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .portfolio-subtext {
+      bottom: -60px;
+      padding: 0.3rem 0.6rem;
+      
+      h5 {
+        font-size: 0.75rem;
+      }
+      
+      p {
+        font-size: 0.625rem;
+      }
+    }
+    
+    &:hover .portfolio-subtext {
+      bottom: -50px;
+    }
+  }
 }
-
-// .carousel, .carousel-inner, .carousel-inner > .carousel-item { overflow: hidden; }
-
-// .carousel-inner:before { position:absolute; top:0; bottom: 0; right: 77%; left: 0; content:""; display:block; background-color: #fff; z-index: 2; }
-// .carousel-inner:after { position:absolute; top:0; bottom: 0; right: 0; left: 77%; content:""; display:block; background-color: #fff; z-index: 2; }
-
-
-

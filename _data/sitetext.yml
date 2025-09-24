@@ -18,19 +18,19 @@ en: &DEFAULT_EN
 
   services:
     title: "Overview"
-    text: "The Basics"
+    text: "Quick Snapshot"
     section: overview
     list:
+      - title: "Partnerships"
+        desc: "**Unlocking strategic synergies** throughout all stages of the entrepreneurial journey"
+        icon: fas fa-handshake #find more at https://fontawesome.com/icons
+        image: assets/img/overview/2.png
       - title: "Prototypes"
         desc: "**Designing frameworks and solutions** from inception to deployment"
         icon: fas fa-laptop
         image: assets/img/overview/2.png
-      - title: "Partnerships"
-        desc: "**Collaborating with founders** at the earliest stages of their entrepreneurial journey"
-        icon: fas fa-handshake #find more at https://fontawesome.com/icons
-        image: assets/img/overview/2.png
       - title: "Pivots"
-        desc: "**Developing product roadmaps** to align features with intended use cases"
+        desc: "**Developing product roadmaps** to align development with intended outcomes"
         icon: fas fa-route
         image: assets/img/overview/2.png
 
@@ -42,7 +42,7 @@ en: &DEFAULT_EN
 
   timeline:
     title: "Platforms"
-    text: "Our Approach"
+    text: "Multiple Approaches"
     section: platforms
     # left is the default
     #start_align: "left"
@@ -56,7 +56,7 @@ en: &DEFAULT_EN
         image: assets/img/timeline/2.png
         alt:
       - title: "Scout"
-        desc: "Coordination of capital partners and syndicates to support fundraising initiatives"
+        desc: "Coordination of go-to-market strategies and fundraising initiatives"
         image: assets/img/timeline/3.png
         alt:
 
@@ -102,11 +102,9 @@ en: &DEFAULT_EN
   footer:
     page:
       - url: /privacy-policy
-        site: "Privacy"
+        site: "Privacy Policy"
       - url: /terms-of-use
-        site: "Terms"
-      - url: /ventures
-        site: "Ventures"
+        site: "Terms & Conditions"
     social:
       - url: https://www.linkedin.com/company/pastel-venture-studio/about/
         icon: "fab fa-linkedin-in"

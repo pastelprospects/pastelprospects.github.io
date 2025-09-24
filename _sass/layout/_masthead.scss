@@ -2,9 +2,9 @@
 header.mast {
   text-align: center;
   color: white;
-  position: relative; /* Needed for absolute positioning of video */
-  overflow: hidden; /* Hide video overflow */
-  height: 100vh; /* Define your desired height */; /* e.g., 500px or 100vh */
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
 
 header.mast video {
@@ -13,17 +13,27 @@ header.mast video {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the entire header */
-  z-index: -1; /* Place video behind content */
+  object-fit: cover;
+  z-index: -1;
+  // -webkit-mask-image: linear-gradient(to bottom,
+  //   rgba(0, 0, 0, 1) 0%,
+  //   rgba(0, 0, 0, 1) 5%, 
+  //   rgba(0, 0, 0, 1) 90%,
+  //   rgba(0, 0, 0, 0) 100%
+  // );
+  // mask-image: linear-gradient(to bottom,
+  //   rgba(0, 0, 0, 1) 0%,
+  //   rgba(0, 0, 0, 1) 5%,
+  //   rgba(0, 0, 0, 1) 90%,
+  //   rgba(0, 0, 0, 0) 100%
+  // );
 }
 
 header.mast .intro-text {
-  position: relative; /* Bring text in front of video */
-  z-index: 1; /* Ensure text is above video */
+  position: relative;
+  z-index: 1;
   margin-top: 25px;
-  /* Add a semi-transparent background to improve text readability if needed */
-  // background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as desired */
-  padding: 20px; /* Add some padding around the text */
+  padding: 20px;
 }
     
 header.mast .intro-lead-in {
@@ -72,28 +82,23 @@ header.mast .intro-head {
 }
 
 .mast {
-  position: relative; /* Needed for absolute positioning of the container */
-  overflow: hidden; /* Hide video overflow */
-  height: 100vh; /* Or your desired height */
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mast .container {
-  text-align: center; /* Center text within the container */
-  /* Add any other container styles you need */
-  position: relative; /* So that z-index works */
-  z-index: 1; /* Bring container forward */
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 header.masthead {
   text-align: center;
   color: white;
-  // background-image: url("#{$header-image}");
-  // background-repeat: no-repeat;
-  // background-attachment: scroll;
-  // background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -153,8 +158,6 @@ header.top-header {
   background-size: cover;
   -o-background-size: cover;
   height: 375px;
-  // border-bottom-left-radius: 5% 15%;
-  // border-bottom-right-radius: 5% 15%;
   box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 } 
 
@@ -188,8 +191,6 @@ header.top-header > h2 {
     background-size: cover;
     -o-background-size: cover;
     height: 500px;
-    // border-bottom-left-radius: 5% 15%;
-    // border-bottom-right-radius: 5% 15%;
     box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
   } 
   

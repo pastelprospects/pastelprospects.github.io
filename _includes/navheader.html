@@ -44,47 +44,14 @@
     </div>
   </nav>
   <!-- End Navigation -->
-  
-  <!-- Header -->
-  <!-- {% if site.locale and site.locale != "" and site.locale != nil %}
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-	  {%- if site.data.sitetext[site.locale].header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext[site.locale].header.title | markdownify }}</div>
-	  {%- endif -%}
-      <img src="/assets/img/logos/PSTL.png" style="width: 225px;"></img>
-	  {%- if site.data.sitetext[site.locale].header.text -%}
-        <div class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text | markdownify }}</div>
-	  {%- endif -%}
-	  {%- if site.data.sitetext[site.locale].header.button -%}
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext[site.locale].header.buttonlink }}">{{ site.data.sitetext[site.locale].header.button }}</a>
-	  {%- endif -%}
-      </div>
-    </div>
-  </header>
-  {% else %}
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-	  {%- if site.data.sitetext.header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
-	  {%- endif -%}
-	  {%- if site.data.sitetext.header.text -%}
-        <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.text | markdownify }}</div>
-	  {%- endif -%}
-	  {%- if site.data.sitetext.header.button -%}
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ site.data.sitetext.header.buttonlink }}">{{ site.data.sitetext.header.button }}</a>
-	  {%- endif -%}
-      </div>
-    </div>
-  </header>
-  {% endif %} -->
 
-  <header class="mast">
-    <video autoplay muted loop>  <source src="/assets/vid/night sky.mp4" type="video/mp4">
-      <source src="/assets/vid/night sky.mp4" type="video/webm">  Your browser does not support the video tag.</video>
-    <div class="container">
+  <header class="mast" style="background-image: url('/assets/img/banner/night sky.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+      <source src="/assets/vid/night sky.mp4" type="video/mp4">
+      <source src="/assets/vid/night sky.mp4" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container" style="position: relative; z-index: 2;">
       <div class="intro-text">
           <div class="intro-lead-in" style="animation: fadeIn 2s ease-in-out;">Pastel Prospects</div>
           <img src="/assets/img/logos/PSTL.png" style="width: 175px" onContextMenu="return false;"></img>

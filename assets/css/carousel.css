@@ -1,0 +1,277 @@
+/* 3D Carousel Styles */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.carousel-3d-container {
+  perspective: 1000px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex: 1;
+  order: 2;
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%, 
+    rgba(0, 0, 0, 1) 95%,  
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 5%,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.carousel-3d {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-item-3d {
+  position: absolute;
+  width: 420px;
+  height: 325px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  cursor: pointer;
+  will-change: transform, opacity, background, border;
+}
+
+/* Card States */
+.carousel-item-3d.active {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 3px solid  rgb(0, 95, 95) !important;
+  box-shadow: 0 20px 50px rgb(0, 95, 95, 0.3) !important;
+  z-index: 100 !important;
+  opacity: 1 !important;
+}
+
+.carousel-item-3d.side-card {
+  background: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  opacity: 0.7 !important;
+}
+
+.carousel-item-3d.side-card.left {
+  z-index: 9 !important;
+}
+
+.carousel-item-3d.side-card.right {
+  z-index: 8 !important;
+}
+
+.carousel-item-3d:hover {
+  transition: all 0.2s ease;
+}
+
+.carousel-item-3d.active:hover {
+  box-shadow: 0 25px 60px rgb(0, 95, 95, 0.4) !important;
+  border: 6px solid  rgb(0, 95, 95) !important;
+}
+
+.carousel-item-3d:not(.active):hover {
+  box-shadow: 0 12px 35px  rgb(0, 95, 95, 0.2);
+  border: 3px solid  rgb(0, 95, 95);
+}
+
+.carousel-item-3d .service-icon {
+  font-size: 3rem;
+  color:  rgb(0, 95, 95);
+  margin-bottom: 1rem;
+}
+
+.carousel-item-3d .service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.carousel-item-3d .service-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.carousel-btn {
+  color: rgb(0, 95, 95);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: rgba(0, 95, 95, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 95, 95, 0.4);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+}
+
+.carousel-btn-left {
+  order: 1;
+}
+
+.carousel-btn-right {
+  order: 3;
+}
+
+.carousel-btn:hover {
+  background:  rgba(0, 140, 120, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 140, 120, 0.75);
+}
+
+.carousel-btn:active {
+  transform: translateY(0);
+}
+
+.carousel-indicators-3d {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem auto 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background:  rgb(0, 95, 95);
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1120px) { 
+  .carousel-item-3d {
+    width: 40vw;
+  }
+}
+
+/* Overlay buttons on side cards for smaller screens */
+@media (max-width: 850px) {
+  .carousel-wrapper {
+    gap: 0;
+    justify-content: center;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    background: rgba(0, 95, 95, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 95, 95, 0.4);
+  }
+  
+  .carousel-btn-left {
+    left: 10px;
+    order: unset;
+  }
+  
+  .carousel-btn-right {
+    right: 10px;
+    order: unset;
+  }
+  
+  .carousel-3d-container {
+    order: unset;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    gap: 0;
+    margin: 1rem 0;
+  }
+  
+  .carousel-item-3d {
+    width: 350px;
+  }
+  
+  .carousel-item-3d .service-icon {
+    font-size: 2.5rem;
+  }
+  
+  .carousel-item-3d .service-title {
+    font-size: 1.1rem;
+  }
+  
+  .carousel-item-3d .service-desc {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    gap: 0;
+    padding: 0 20px;
+  }
+  
+  .carousel-item-3d {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  
+  .carousel-btn-left {
+    left: 5px;
+  }
+  
+  .carousel-btn-right {
+    right: 5px;
+  }
+}

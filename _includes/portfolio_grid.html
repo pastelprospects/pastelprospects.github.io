@@ -8,64 +8,143 @@
         <h3 class="section-subheading text-muted">{{ site.data.sitetext[site.locale].portfolio.text | markdownify }}</h3>
       </div>
     </div>
-   <!-- Carousel -->
-<div id="fawesome-carousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-bs-target="#fawesome-carousel" data-bs-slide-to="0" class="active"></li>
-    <li data-bs-target="#fawesome-carousel" data-bs-slide-to="1"></li>
-    <li data-bs-target="#fawesome-carousel" data-bs-slide-to="2"></li>
-    <li data-bs-target="#fawesome-carousel" data-bs-slide-to="3"></li>
-    <li data-bs-target="#fawesome-carousel" data-bs-slide-to="4"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active" style="border-radius: 5%;">
-      <a href="http://afriexapp.com" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/Afx-logo.png" alt="" onContextMenu="return false;"></a>
-          <div class="carousel-caption d-md-block">
-            <h5 style="color: rgb(75, 75, 75);">Afriex</h5>
-              <p style="color: grey;">Crossborder Payments</p>
-          </div>
+    
+    <!-- Infinite Autoplay Carousel -->
+    <div class="portfolio-carousel-container">
+      <div class="portfolio-carousel-track">
+        <div class="portfolio-item">
+          <a href="http://afriexapp.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/Afx-logo.png" alt="Afriex" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Afriex</h5>
+              <p>Crossborder Payments</p>
+            </div>
+          </a>
         </div>
-    <div class="carousel-item" style="border-radius: 5%;">
-      <a href="http://audiocardio.com" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/AC-logo.png" alt="" onContextMenu="return false;"></a>
-          <div class="carousel-caption d-md-block">
-            <h5 style="color: rgb(75, 75, 75);">AudioCardio</h5>
-              <p style="color: grey;">Sound Therapy</p>
-          </div>
+        <div class="portfolio-item">
+          <a href="http://audiocardio.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/AC-logo.png" alt="AudioCardio" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>AudioCardio</h5>
+              <p>Sound Therapy</p>
+            </div>
+          </a>
         </div>
-    <div class="carousel-item" style="border-radius: 5%;">
-      <a href="http://audios.com" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/Audio-logo.png" alt="" onContextMenu="return false;"></a>
-          <div class="carousel-caption d-md-block">
-            <h5 style="color: rgb(75, 75, 75);">Audios</h5>
-              <p style="color: grey;">Wireless Speakers</p>
-          </div>
+        <div class="portfolio-item">
+          <a href="http://audios.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/Audio-logo.png" alt="Audios" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Audios</h5>
+              <p>Wireless Speakers</p>
+            </div>
+          </a>
         </div>
-    <div class="carousel-item" style="border-radius: 5%;">
-      <a href="http://coienergy.com" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/COI-logo.png" alt="" onContextMenu="return false;"></a>
-          <div class="carousel-caption d-md-block">
-            <h5 style="color: rgb(75, 75, 75);">COI Energy</h5>
-              <p style="color: grey;">Energy Management</p>
-          </div>
+        <div class="portfolio-item">
+          <a href="http://coienergy.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/COI-logo.png" alt="COI Energy" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>COI Energy</h5>
+              <p>Energy Management</p>
+            </div>
+          </a>
         </div>
-    <div class="carousel-item" style="border-radius: 5%;">
-      <a href="http://payhippo.ng" target="_blank" rel="noopener noreferrer">
-        <img class="d-block w-100" style="border-radius: 5%;" src="/assets/img/portfolio/pay-logo.png" alt="" onContextMenu="return false;"></a>
-          <div class="carousel-caption d-md-block">
-            <h5 style="color: rgb(75, 75, 75);">Payhippo</h5>
-              <p style="color: grey;">SME Lending</p>
-          </div>
+        <div class="portfolio-item">
+          <a href="http://payhippo.ng" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/pay-logo.png" alt="Payhippo" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Payhippo</h5>
+              <p>SME Lending</p>
+            </div>
+          </a>
         </div>
+        <!-- Duplicate items for infinite loop -->
+        <div class="portfolio-item">
+          <a href="http://afriexapp.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/Afx-logo.png" alt="Afriex" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Afriex</h5>
+              <p>Crossborder Payments</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="http://audiocardio.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/AC-logo.png" alt="AudioCardio" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>AudioCardio</h5>
+              <p>Sound Therapy</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="http://audios.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/Audio-logo.png" alt="Audios" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Audios</h5>
+              <p>Wireless Speakers</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="http://coienergy.com" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/COI-logo.png" alt="COI Energy" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>COI Energy</h5>
+              <p>Energy Management</p>
+            </div>
+          </a>
+        </div>
+        <div class="portfolio-item">
+          <a href="http://payhippo.ng" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/portfolio/pay-logo.png" alt="Payhippo" onContextMenu="return false;">
+            <div class="portfolio-subtext">
+              <h5>Payhippo</h5>
+              <p>SME Lending</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-    <a class="left slide-control" href="#fawesome-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-    <a class="right slide-control" href="#fawesome-carousel" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-  </div>
-  <style type="text/css">
-    .slide-control{color:#4d4d4d8d;font-size:80px;left:30px;margin-top:-70px;position:absolute;top:50%;}
-    .slide-control.right{left:auto;right:30px;}
-  </style>
 </section>
 {% endif %}
+
+<script>
+// Portfolio Infinite Carousel
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselTrack = document.querySelector('.portfolio-carousel-track');
+  const carouselContainer = document.querySelector('.portfolio-carousel-container');
+  
+  if (carouselTrack && carouselContainer) {
+    // Clone the first set of items and append to the end for seamless loop
+    const items = carouselTrack.querySelectorAll('.portfolio-item');
+    const firstSet = Array.from(items).slice(0, 5); // First 5 items
+    
+    firstSet.forEach(item => {
+      const clone = item.cloneNode(true);
+      carouselTrack.appendChild(clone);
+    });
+    
+    // Reset animation when it completes
+    carouselTrack.addEventListener('animationiteration', function() {
+      this.style.animation = 'none';
+      this.offsetHeight; // Trigger reflow
+      this.style.animation = 'scroll 20s linear infinite';
+    });
+    
+    // Pause animation when hovering over individual portfolio items
+    const allItems = carouselTrack.querySelectorAll('.portfolio-item');
+    allItems.forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        carouselTrack.style.animationPlayState = 'paused';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        carouselTrack.style.animationPlayState = 'running';
+      });
+    });
+  }
+});
+</script>
+
 {% include modals.html %}

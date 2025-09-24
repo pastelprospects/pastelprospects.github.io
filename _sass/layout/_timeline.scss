@@ -1,4 +1,37 @@
-// Styling for the timeline section
+/* Timeline Animation Styles */
+.timeline .timeline-image {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline .timeline-image.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline .timeline-panel {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline .timeline-panel.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Inverted panels slide from right on desktop */
+@media (min-width: 768px) {
+  .timeline-inverted .timeline-panel {
+    transform: translateX(50px);
+  }
+  
+  .timeline-inverted .timeline-panel.animate-in {
+    transform: translateX(0);
+  }
+}
+
 .timeline {
   position: relative;
   padding: 0;
@@ -28,12 +61,19 @@
     .timeline-panel {
       position: relative;
       float: right;
-      width: 100%;
-      padding: 0 20px 0 100px;
+      width: 90%;
+      padding: 2rem;
       text-align: left;
+      background: rgba(255, 255, 255, 0.75);
+      border: 2px solid rgb(0, 95, 95);
+      border-radius: 15px;
+      box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      margin-top: 45px;
       &:before {
         right: auto;
-        left: -15px;
+        left: -25px;
         border-right-width: 15px;
         border-left-width: 0;
       }
@@ -43,14 +83,19 @@
         border-right-width: 14px;
         border-left-width: 0;
       }
+      &:hover {
+        box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+        border: 5px solid rgb(0, 95, 95);
+        transform: translateY(-2px);
+      }
     }
     .timeline-image {
       position: absolute;
       opacity: 0.85;
       z-index: 100;
       left: 0;
-      width: 80px;
-      height: 80px;
+      width: 105px;
+      height: 105px;
       margin-left: 0;
       text-align: center;
       color: $white;
@@ -66,8 +111,14 @@
     }
     &.timeline-inverted > .timeline-panel {
       float: right;
-      padding: 0 20px 0 100px;
+      padding: 2rem;
       text-align: left;
+      background: rgba(255, 255, 255, 0.75);
+      border: 2px solid rgb(0, 95, 95);
+      border-radius: 15px;
+      box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
       &:before {
         right: auto;
         left: -15px;
@@ -79,6 +130,11 @@
         left: -14px;
         border-right-width: 14px;
         border-left-width: 0;
+      }
+      &:hover {
+        box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+        border: 3px solid rgb(0, 95, 95);
+        transform: translateY(-2px);
       }
     }
     &:last-child {
@@ -113,13 +169,25 @@
       .timeline-panel {
         float: left;
         width: 41%;
-        padding: 0 20px 20px 30px;
+        padding: 2rem;
         text-align: right;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        margin-left: -25px;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
       .timeline-image {
         left: 50%;
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
         margin-left: -50px;
         h4 {
           font-size: 13px;
@@ -129,8 +197,20 @@
       }
       &.timeline-inverted > .timeline-panel {
         float: right;
-        padding: 0 30px 20px 20px;
+        padding: 2rem;
         text-align: left;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        margin-right: -25px;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -140,7 +220,18 @@
     > li {
       min-height: 150px;
       .timeline-panel {
-        padding: 0 20px 20px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
       .timeline-image {
         width: 150px;
@@ -153,7 +244,18 @@
         }
       }
       &.timeline-inverted > .timeline-panel {
-        padding: 0 20px 20px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -163,7 +265,19 @@
     > li {
       min-height: 170px;
       .timeline-panel {
-        padding: 0 20px 20px 100px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        margin-right: 100px;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
       .timeline-image {
         width: 170px;
@@ -174,7 +288,19 @@
         }
       }
       &.timeline-inverted > .timeline-panel {
-        padding: 0 100px 20px 20px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 2px solid rgb(0, 95, 95);
+        border-radius: 15px;
+        box-shadow: 0 20px 50px rgba(0, 95, 95, 0.3);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        margin-left: 100px;
+        &:hover {
+          box-shadow: 0 25px 60px rgba(0, 95, 95, 0.4);
+          border: 3px solid rgb(0, 95, 95);
+          transform: translateY(-2px);
+        }
       }
     }
   }

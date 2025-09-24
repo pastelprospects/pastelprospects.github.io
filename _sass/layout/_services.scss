@@ -1,8 +1,48 @@
 // Styling for the services section
-.service-heading {
-  margin: 15px 0;
-  text-transform: none;
-  color: rgb(0, 95, 95);
+:root {
+  /* --services-bg-image: url('/assets/vid/lines.gif'); */
+  --services-bg-color: rgba(255, 255, 255);
+  /* --services-overlay: rgba(0, 0, 0, 0.3); */
+}
+
+/* Services section styling using CSS variables */
+.services-section {
+  background-image: var(--services-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--services-bg-color);
+  position: relative;
+  padding-top: 75px;
+}
+
+/* Overlay for better text readability */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--services-overlay);
+  z-index: 1;
+}
+
+.services-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Initial state: hidden (adjust opacity and transform as needed) */
+.page-section .service-fade > * {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.page-section .service-fade > *.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service.icon {
