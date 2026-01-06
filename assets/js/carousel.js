@@ -52,10 +52,17 @@ class Carousel3D {
         // Apply 3D effects based on position
         const z = -Math.abs(relativeIndex) * 50; // Depth effect
         const rotateY = relativeIndex * 15; // Rotation for side cards
-        const scale = relativeIndex === 0 ? 1 : 0.85; // Active card is larger
+        // Use scale3d for better 3D rendering quality, and round to avoid subpixel issues
+        const scale = relativeIndex === 0 ? 1 : 0.9; // Slightly less scale to reduce blur
+        const scaleValue = Math.round(scale * 100) / 100; // Round to 2 decimal places
         
-        // Combine the base translate(-50%, -50%) with our 3D positioning
-        item.style.transform = `translate(calc(-50% + ${x}px), -50%) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+        // Round x to integer to avoid subpixel rendering
+        const roundedX = Math.round(x);
+        
+        // Use translate3d instead of translate for better hardware acceleration
+        // Combine the base translate3d(-50%, -50%, 0) with our 3D positioning
+        // Using translate3d ensures GPU acceleration and avoids sub-pixel issues
+        item.style.transform = `translate3d(calc(-50% + ${roundedX}px), -50%, ${z}px) rotateY(${rotateY}deg) scale3d(${scaleValue}, ${scaleValue}, 1)`;
         
         // Remove all existing state classes
         item.classList.remove('active', 'side-card', 'left', 'right');

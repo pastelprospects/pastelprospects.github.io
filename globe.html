@@ -1,0 +1,167 @@
+---
+layout: null
+permalink: /globe
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aero-View - Crop Monitoring</title>
+    <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/globe/base.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/globe/globe.css' | relative_url }}">
+</head>
+
+<body>
+    <!-- Logo Button (Home Link) -->
+    <a href="{{ '/' | relative_url }}" class="logo-btn" title="Home">
+        <img src="{{ '/assets/img/logos/pastel.png' | relative_url }}" alt="Pastel Prospects">
+    </a>
+
+    <div id="globeViz"></div>
+
+    <!-- Continent Toggle Button -->
+    <div class="action-btn" id="continentToggleBtn" title="Toggle Continent Mode">
+        <img src="{{ '/assets/img/icon/location.png' | relative_url }}" alt="Location">
+    </div>
+
+    <!-- Draggable Continent Legend -->
+    <div id="continentLegend" class="draggable-legend">
+        <div class="legend-header" id="continentLegendHeader">Continents</div>
+        <table id="continentLegendBody">
+            <!-- Populated by JS -->
+        </table>
+    </div>
+
+    <div class="legend">
+        <div class="info-button" id="legendInfoBtn">i</div>
+        <div class="filter-button" id="legendFilterBtn" title="Toggle Crop Only Filter">&#10697;</div>
+        <div class="legend-scroll-container">
+            <table id="legendTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tag</th>
+                    </tr>
+                </thead>
+                <tbody id="legendBody">
+                    <tr>
+                        <td><span class="legend-color-box" style="background-color: #4CAF50;"></span></td>
+                        <td>Crop</td>
+                    </tr>
+                    <tr>
+                        <td><span class="legend-color-box" style="background-color: #E57373;"></span></td>
+                        <td>Non-Crop</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="legendTitleContent">Landscape</div>
+        </div>
+        <div class="toggle-view-button" id="legendToggleBtn" title="Toggle Legend View">&#9660;</div>
+        <div class="drag-button" id="legendDragBtn" title="Drag to Reposition">&#10021;</div>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle">Data Definitions</h2>
+
+            <div id="default-definitions">
+                <h3 class="text-crop">Crop</h3>
+                <p>Land actively used for agriculture, classified into five major groups:</p>
+                <div class="crop-group-definition">
+                    <h4>1. Cereals & Grains (Energy Staples)</h4>
+                    <p>Grasses grown for their edible starchy seeds. They provide the bulk of the world's caloric
+                        intake.</p>
+                    <p class="crop-list"><strong>Crops:</strong> Maize, Wheat, Rice, Sorghum, Millet, Barley, Rye.</p>
+                </div>
+                <div class="crop-group-definition">
+                    <h4>2. Legumes, Oilseeds & Pulses (Protein & Fats)</h4>
+                    <p>These crops are primarily used for their high protein content (pulses) or for extracting
+                        vegetable oils. Many (like Soybeans and Groundnuts) serve both purposes.</p>
+                    <p class="crop-list"><strong>Crops:</strong> Soybean, Groundnut (Peanut), Sunflower, Canola, Bean,
+                        Alfalfa.</p>
+                </div>
+                <div class="crop-group-definition">
+                    <h4>3. Roots, Tubers & Sugar Crops (Starch & Sweeteners)</h4>
+                    <p>This group consists of crops where the energy is stored in underground organs or stalks. They are
+                        often processed for industrial starch or sugar.</p>
+                    <p class="crop-list"><strong>Crops:</strong> Potato, Cassava, Yam, Carrot, Sugarcane, Sugarbeet.</p>
+                </div>
+                <div class="crop-group-definition">
+                    <h4>4. Horticultural (Fruits & Vegetables)</h4>
+                    <p>This category includes high-value crops typically grown in orchards or intensive garden settings.
+                    </p>
+                    <p class="crop-list"><strong>Crops:</strong> Orchard, Fruit, Tree, Eggplant.</p>
+                </div>
+                <div class="crop-group-definition">
+                    <h4>5. Industrial & Beverage Crops (Specialty Crops)</h4>
+                    <p>Non-staple crops grown for technical fiber or for processing into beverages and stimulants.</p>
+                    <p class="crop-list"><strong>Crops:</strong> Cotton, Coffee, Cocoa.</p>
+                </div>
+
+                <h3 class="text-non-crop">Non-Crop</h3>
+                <p>Land cover not used for agriculture:</p>
+                <ul>
+                    <li><strong>Natural Vegetation:</strong> Forests, shrublands, grasslands.</li>
+                    <li><strong>Artificial Surfaces:</strong> Urban areas etc.</li>
+                    <li><strong>Barren Land:</strong> Sand, rock, bare soil.</li>
+                </ul>
+            </div>
+
+            <div id="crop-statistics">
+                <!-- content populated by js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Citation Button -->
+    <div class="action-btn" id="citationBtn" title="Cite this Dataset">
+        <img src="{{ '/assets/img/icon/bookmark.png' | relative_url }}" alt="Bookmark">
+    </div>
+
+    <!-- Climate Data Orbs -->
+    <div id="climateOrbs" class="climate-orbs-container" style="display: none;">
+        <div class="climate-orb" data-layer="ndvi" title="Vegetation (NDVI)" style="background-color: #4CAF50;"></div>
+        <div class="climate-orb" data-layer="temp" title="Land Surface Temp" style="background-color: #F44336;"></div>
+        <div class="climate-orb" data-layer="soil" title="Soil Moisture" style="background-color: #795548;"></div>
+        <!-- <div class="climate-orb" data-layer="precip" title="Precipitation" style="background-color: #2196F3;"></div> -->
+    </div>
+
+    <!-- Control Panel -->
+    <div id="controlPanel" class="control-panel">
+        <button id="rotateBtn" class="control-btn" title="Toggle Rotation">
+            <span class="btn-icon">🔄</span> Rotate
+        </button>
+        <button id="shaderBtn" class="control-btn" title="Toggle Map Style">
+            <span class="btn-icon">🌍</span> Dynamic
+        </button>
+        <button id="ndviBtn" class="control-btn" title="Toggle NDVI Health">
+            <span class="btn-icon">🌿</span> NDVI
+        </button>
+    </div>
+
+    <!-- Citation Modal -->
+    <div id="citationModal" class="modal">
+        <div class="modal-content citation-content">
+            <span class="close-button" id="citationCloseBtn">&times;</span>
+            <h2 class="citation-title">Acknowledgement</h2>
+            <p class="citation-text">
+                Sample dataset based on <strong>CropHarvest</strong> research.
+            </p>
+            <div class="citation-box">
+                <h3><strong>Title:</strong> CropHarvest: A global dataset for crop type classification</h3>
+                <h3><strong>Author:</strong> Tseng, Gabriel and Kerner, Hannah and Nakalembe, Catherine and
+                    Becker-Reshef, Inbal</h3>
+                <h3><strong>Year:</strong> 2021</h3>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="{{ '/assets/js/globe/globe.js' | relative_url }}"></script>
+</body>
+</html>
+

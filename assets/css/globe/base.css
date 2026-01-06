@@ -1,0 +1,172 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+
+hr {
+    border-color: #f05f40;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+hr.light {
+    border-color: white;
+}
+
+a {
+    transition: all 0.35s;
+    color: #f05f40;
+}
+
+a:hover,
+a:focus {
+    color: #eb3812;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.bg-primary {
+    background-color: #f05f40;
+}
+
+.bg-dark {
+    background-color: #222;
+    color: white;
+}
+
+.text-faded {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+section {
+    padding: 100px 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.text-primary {
+    color: #f05f40;
+}
+
+.no-gutter>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.btn-default {
+    background-color: white;
+    border-color: white;
+    color: #222;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active {
+    background-color: #f2f2f2;
+    border-color: #ededed;
+    color: #222;
+}
+
+.btn-primary {
+    background-color: #f05f40;
+    border-color: #f05f40;
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #ee4b28;
+    border-color: #ed431f;
+    color: white;
+}
+
+.btn {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+#subscribe .fa {
+    color: #222;
+    font-size: 4em;
+}
+
+section#subscribe {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    background-size: cover;
+    background-color: rgb(170, 170, 170);
+    background-image: url(/img/background/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: scroll;
+}
+
+section#subscribe .section-heading {
+    color: white;
+}
+
+@media (min-width: 1200px) {
+    section#subscribe {
+        background-attachment: fixed;
+    }
+}
+
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: #222;
+}
+
+::selection {
+    color: white;
+    text-shadow: none;
+    background: #222;
+}
+
+img::selection {
+    color: white;
+    background: transparent;
+}
+
+img::-moz-selection {
+    color: white;
+    background: transparent;
+}
+
+body {
+    -webkit-tap-highlight-color: #222;
+}

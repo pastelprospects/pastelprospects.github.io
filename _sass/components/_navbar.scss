@@ -2,6 +2,7 @@
 #mainNav {
   margin: 0px;
   background-color: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(2px);
   .navbar-toggler {
     font-size: 12px;
     right: 0;
@@ -23,17 +24,32 @@
     }
   }
   .navbar-nav {
+    text-align: center;
     .nav-item {
       .nav-link {
         font-size: 90%;
         font-weight: 400;
-        padding: 0.75em 0;
+        padding: 1.25em 0;
         letter-spacing: 1px;
         color: white;
+        text-align: center;
         @include heading-font;
         &.active,
         &:hover {
           color: $primary;
+        }
+      }
+    }
+  }
+  // Right-align collapsed menu content
+  .navbar-collapse {
+    text-align: center;
+    .navbar-nav {
+      text-align: center;
+      .nav-item {
+        text-align: center;
+        .nav-link {
+          text-align: center;
         }
       }
     }
@@ -48,6 +64,8 @@
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
     background-color: transparent;
+    // Remove backdrop-filter when background is transparent
+    backdrop-filter: none;
     .navbar-brand {
       font-size: 1.75em;
       -webkit-transition: all 0.3s;
@@ -65,6 +83,8 @@
       padding-top: 0;
       padding-bottom: 0;
       background-color: rgba(15, 15, 15, 0.7);
+      // Restore backdrop-filter when background is not transparent
+      backdrop-filter: blur(2px);
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;

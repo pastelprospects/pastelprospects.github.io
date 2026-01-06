@@ -1,0 +1,576 @@
+// 3D Orb Carousel Styles for About Section
+.about-carousel-3d-container {
+  position: relative;
+  height: 500px;
+  // Reduce perspective to minimize blur
+  perspective: 1000px;
+  overflow: visible;
+  margin: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Improve rendering quality
+  -webkit-font-smoothing: antialiased;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  // Force crisp rendering
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  // Ensure container doesn't clip on mobile
+  width: 100%;
+  max-width: 100%;
+}
+
+.about-carousel-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  // Don't transition container transform - match services carousel (no container rotation)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Force hardware acceleration
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.about-carousel-item {
+  position: absolute;
+  // Reduced by 25%: 320px -> 240px
+  width: 240px;
+  // Reduced by 25%: 420px -> 315px
+  height: 315px;
+  left: 50%;
+  top: 50%;
+  // Match services carousel - items are positioned by transform, not margin
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out; // Match services carousel timing
+  cursor: pointer;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  // Don't use will-change - it causes blurry rendering
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // Ensure caption text is not affected by 3D transforms
+  overflow: visible;
+}
+
+.about-orb-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  // Ensure wrapper doesn't interfere with caption positioning
+}
+
+.about-orb-link {
+  display: block;
+  // Reduced by 25%: 320px -> 240px
+  width: 240px;
+  height: 240px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-orb {
+  // Reduced by 25%: 320px -> 240px
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  // 3D sphere effect with light gray radial gradient for depth
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(230, 230, 230, 1) 0%,
+    rgba(220, 220, 220, 0.95) 30%,
+    rgba(210, 210, 210, 0.9) 60%,
+    rgba(200, 200, 200, 0.85) 100%
+  );
+  // Multiple layered shadows for 3D sphere effect
+  box-shadow: 
+    // Outer glow
+    0 20px 60px rgba(0, 95, 95, 0.3),
+    // Border
+    0 0 0 1px rgba(0, 95, 95, 0.1),
+    // Top highlight (light source from top-left)
+    inset -20px -20px 40px rgba(255, 255, 255, 0.6),
+    // Bottom shadow (creates depth)
+    inset 20px 20px 40px rgba(0, 0, 0, 0.1),
+    // Left highlight
+    inset -15px 0 30px rgba(255, 255, 255, 0.4),
+    // Right shadow
+    inset 15px 0 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // Reduced by 25%: 32px -> 24px
+  padding: 24px;
+  // Transition shadows for dynamic effect
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  // Improve rendering
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  // Prevent sub-pixel rendering
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  
+  // Dynamic lighting overlay that will be rotated by JS
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    // Radial gradient for dynamic lighting
+    background: radial-gradient(circle at var(--light-x, 30%) var(--light-y, 30%), 
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 50%
+    );
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.1s linear;
+  }
+  
+  // Secondary highlight for more depth
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 2;
+    filter: blur(10px);
+  }
+}
+
+.about-carousel-item.active .about-orb {
+  // Enhanced 3D sphere effect for active orb
+  box-shadow: 
+    // Outer glow - stronger for active
+    0 25px 70px rgba(0, 95, 95, 0.4),
+    // Border
+    0 0 0 2px rgba(0, 95, 95, 0.2),
+    // Top highlight (light source from top-left)
+    inset -25px -25px 50px rgba(255, 255, 255, 0.7),
+    // Bottom shadow (creates depth)
+    inset 25px 25px 50px rgba(0, 0, 0, 0.12),
+    // Left highlight
+    inset -20px 0 35px rgba(255, 255, 255, 0.5),
+    // Right shadow
+    inset 20px 0 35px rgba(0, 0, 0, 0.1);
+}
+
+.about-carousel-item:hover .about-orb {
+  // Enhanced 3D sphere effect on hover
+  box-shadow: 
+    // Outer glow - strongest on hover
+    0 30px 80px rgba(0, 95, 95, 0.5),
+    // Border
+    0 0 0 3px rgba(0, 95, 95, 0.3),
+    // Top highlight (light source from top-left)
+    inset -30px -30px 60px rgba(255, 255, 255, 0.8),
+    // Bottom shadow (creates depth)
+    inset 30px 30px 60px rgba(0, 0, 0, 0.15),
+    // Left highlight
+    inset -25px 0 40px rgba(255, 255, 255, 0.6),
+    // Right shadow
+    inset 25px 0 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-orb-image {
+  // Reduced by 25%: 256px -> 192px
+  // Size image so orb is ~25% bigger: 240px orb / 1.25 = 192px image
+  // With 24px padding on orb, image container should be 192px
+  // Ensure perfectly round - must be square
+  width: 150px !important;
+  height: 150px !important;
+  min-width: 150px !important;
+  min-height: 150px !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  // Remove margin to allow flexbox centering in orb
+  margin: 0 !important;
+  position: relative;
+  // Remove background and shadow to match orb
+  background: transparent !important;
+  box-shadow: none !important;
+  // Remove padding to ensure perfect circle
+  padding: 0 !important;
+  // Ensure image is centered
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Remove transform transition to prevent blur
+  // transition: transform 0.4s ease;
+  // Isolate from parent 3D transforms
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  // Create new stacking context
+  isolation: isolate;
+  // Improve rendering
+  -webkit-font-smoothing: antialiased;
+  
+  img {
+    // Force image to be perfectly round circle
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    // Use cover to fill the round container completely
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 50% !important;
+    // Remove filter to prevent blur - use CSS opacity instead
+    // filter: grayscale(75%);
+    opacity: 0.75;
+    transition: opacity 0.4s ease;
+    display: block !important;
+    // Force crisp rendering
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    // Isolate from 3D transforms
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    // Create new stacking context
+    isolation: isolate;
+    // Ensure image is perfectly round and centered
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.about-carousel-item.active .about-orb-image {
+  // Remove scaling to prevent blur
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  
+  img {
+    // Use opacity instead of filter
+    opacity: 1;
+  }
+}
+
+.about-carousel-item:hover .about-orb-image {
+  // Remove scaling to prevent blur
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  
+  img {
+    // Use opacity instead of filter
+    opacity: 1;
+  }
+}
+
+.about-orb-content {
+  // Treat as separate caption - completely independent from orb
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  // Position below orb with clear separation
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 30px;
+  width: 100%;
+  // Completely isolate from parent 3D transforms - use translateZ(0) like services carousel
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  // Create new stacking context - separate layer
+  isolation: isolate;
+  // Improve text rendering - reference services carousel
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Prevent subpixel blurring
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  // Remove will-change - it can cause blurry rendering
+  // will-change: auto;
+  // Ensure it's not affected by any orb transforms
+  pointer-events: none;
+  // Force crisp rendering - no transforms on this element
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.about-orb-title {
+  // Caption-style title - separate from orb
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: rgb(0, 95, 95);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  // Use geometricPrecision for better rendering with transforms (reference services carousel)
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Prevent subpixel blurring from scaling
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  // Force hardware acceleration for crisp rendering (reference services carousel)
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  // Create new stacking context - completely separate
+  isolation: isolate;
+  // Ensure no interaction with orb transforms
+  pointer-events: auto;
+  // Force crisp rendering
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  // Ensure no scaling or transforms affect this
+  will-change: auto;
+}
+
+.about-orb-text {
+  // Caption-style text - separate from orb
+  font-size: 12px;
+  margin: 0;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+  // Use geometricPrecision for better rendering with transforms (reference services carousel)
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Prevent subpixel blurring from scaling
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
+  // Force hardware acceleration for crisp rendering (reference services carousel)
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  // Create new stacking context - completely separate
+  isolation: isolate;
+  // Ensure no interaction with orb transforms
+  pointer-events: auto;
+  // Force crisp rendering
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  // Ensure no scaling or transforms affect this
+  will-change: auto;
+}
+
+.about-carousel-item:hover .about-orb-title {
+  color: rgb(0, 140, 120);
+}
+
+.about-carousel-item:hover .about-orb-text {
+  color: #555;
+}
+
+// Navigation Controls
+.about-carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.about-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 95, 95, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgb(0, 95, 95);
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  // Remove backdrop-filter - it causes blurriness
+  // backdrop-filter: blur(2px);
+  box-shadow: 0 4px 15px rgba(0, 95, 95, 0.3);
+  
+  span {
+    line-height: 1;
+    font-weight: bold;
+  }
+  
+  &:hover {
+    background: rgba(0, 95, 95, 0.25);
+    border-color: rgba(0, 95, 95, 0.4);
+    // Remove scale effect
+    transform: translateY(-50%);
+    box-shadow: 0 6px 20px rgba(0, 95, 95, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(-50%);
+  }
+}
+
+.about-carousel-prev {
+  left: 30px;
+}
+
+.about-carousel-next {
+  right: 30px;
+}
+
+// Indicators
+.about-carousel-indicators {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.about-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 95, 95, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  
+  &:hover {
+    background: rgba(0, 95, 95, 0.5);
+    // Remove scale effect
+  }
+  
+  &.active {
+    background: rgb(0, 95, 95);
+    // Remove scale effect
+    border-color: rgba(0, 95, 95, 0.3);
+    box-shadow: 0 0 10px rgba(0, 95, 95, 0.5);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  // Ensure parent section doesn't clip
+  .page-section {
+    overflow-x: hidden; // Prevent horizontal scroll but allow container to clip
+  }
+  
+  // Restrict container width to clip side orbs on mobile
+  .about-carousel-3d-container {
+    height: 400px;
+    margin: 40px 0;
+    // Clip overflow to hide side orbs at edges
+    overflow: hidden !important;
+    // Restrict width to viewport to clip edges
+    width: 100vw;
+    max-width: 100vw;
+    // Center the container by breaking out of parent constraints
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    // Remove any padding that might interfere
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .about-carousel-3d {
+    // Carousel can overflow but container clips it
+    overflow: visible;
+    width: 100%;
+  }
+  
+  .about-carousel-item {
+    // Reduced by 25%: 260px -> 195px, 360px -> 270px
+    width: 195px;
+    height: 270px; // Increased to accommodate content below
+    // Remove margins - positioning handled by transform (like services carousel)
+    // Active orb will be centered via transform: translate3d(calc(-50% + 0px), -50%, ...)
+    // Side orbs will overflow off-screen naturally
+  }
+  
+  // Update spacing for mobile to allow overflow
+  // Note: JavaScript will use itemWidth = 195px and spacing = 50px
+  
+  .about-orb-link {
+    // Reduced by 25%: 260px -> 195px
+    width: 195px;
+    height: 195px;
+  }
+  
+  .about-orb {
+    // Reduced by 25%: 260px -> 195px
+    width: 195px;
+    height: 195px;
+    // Reduced by 25%: 26px -> 19.5px (rounded to 20px for even pixels)
+    padding: 20px;
+  }
+  
+  .about-orb-image {
+    // Reduced by 25%: 208px -> 156px
+    // Size image so orb is ~25% bigger: 195px orb / 1.25 = 156px image
+    // Ensure perfectly square
+    width: 156px;
+    height: 156px;
+    min-width: 156px;
+    min-height: 156px;
+    max-width: 156px;
+    max-height: 156px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Remove background to match orb
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .about-orb-title {
+    font-size: 14px;
+  }
+  
+  .about-orb-text {
+    font-size: 12px;
+  }
+  
+  .about-carousel-control {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .about-carousel-prev {
+    left: 15px;
+  }
+  
+  .about-carousel-next {
+    right: 15px;
+  }
+}
+

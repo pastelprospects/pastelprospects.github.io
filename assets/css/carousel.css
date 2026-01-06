@@ -17,6 +17,10 @@
   overflow: hidden;
   flex: 1;
   order: 2;
+  /* Optimize 3D rendering */
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /* Mask gradient - can cause blurriness, but needed for fade effect */
   -webkit-mask-image: linear-gradient(to right,
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 1) 5%, 
@@ -29,6 +33,8 @@
     rgba(0, 0, 0, 1) 95%,
     rgba(0, 0, 0, 0) 100%
   );
+  /* Improve rendering quality */
+  -webkit-font-smoothing: antialiased;
 }
 
 .carousel-3d {
@@ -38,12 +44,18 @@
   transition: transform 0.6s ease-in-out;
   display: flex;
   align-items: center;
+  /* Force hardware acceleration */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Improve rendering quality */
+  -webkit-font-smoothing: antialiased;
 }
 
 .carousel-item-3d {
   position: absolute;
-  width: 420px;
-  height: 325px;
+  /* Use even pixel dimensions to avoid sub-pixel rendering */
+  width: 424px;
+  height: 324px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -52,28 +64,44 @@
   align-items: center;
   text-align: center;
   padding: 3rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s ease-in-out;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  /* Force hardware acceleration and avoid sub-pixel positioning */
+  transform: translate3d(-50%, -50%, 0);
   transform-origin: center center;
   cursor: pointer;
-  will-change: transform, opacity, background, border;
+  /* Optimize 3D rendering to prevent blurriness */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  /* Don't use will-change - it causes blurry rendering */
+  /* will-change is set dynamically by JS only during transitions */
+  /* Improve text rendering - use geometricPrecision for scaled elements */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent subpixel blurring from scaling */
+  -webkit-font-feature-settings: "liga" 0;
+  font-feature-settings: "liga" 0;
 }
 
 /* Card States */
 .carousel-item-3d.active {
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   border: 3px solid  rgb(0, 95, 95) !important;
   box-shadow: 0 20px 50px rgb(0, 95, 95, 0.3) !important;
   z-index: 100 !important;
   opacity: 1 !important;
+  /* Don't override transform - let JavaScript handle it */
+  /* Remove will-change to prevent blurry rendering */
+  will-change: auto;
 }
 
 .carousel-item-3d.side-card {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-  opacity: 0.7 !important;
+  opacity: 0.85 !important;
 }
 
 .carousel-item-3d.side-card.left {
@@ -102,19 +130,40 @@
   font-size: 3rem;
   color:  rgb(0, 95, 95);
   margin-bottom: 1rem;
+  /* Improve icon rendering for scaled elements */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  /* Force hardware acceleration for crisp rendering */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .carousel-item-3d .service-title {
-  font-size: 1.25rem;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #333;
+  /* Use geometricPrecision for better rendering with transforms */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Force hardware acceleration for crisp rendering */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .carousel-item-3d .service-desc {
-  font-size: 0.9rem;
+  font-size: 15px;
   color: #666;
   line-height: 1.4;
+  /* Use geometricPrecision for better rendering with transforms */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Force hardware acceleration for crisp rendering */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .carousel-btn {
@@ -125,7 +174,7 @@
   font-weight: bold;
   transition: all 0.3s ease;
   background: rgba(0, 95, 95, 0.15);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); Removed to prevent blurriness in services section */
   border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 20px rgba(0, 95, 95, 0.4);
   width: 40px;
@@ -198,7 +247,7 @@
     transform: translateY(-50%);
     z-index: 200;
     background: rgba(0, 95, 95, 0.15);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); Removed to prevent blurriness in services section */
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 20px rgba(0, 95, 95, 0.4);
   }
@@ -226,7 +275,7 @@
   }
   
   .carousel-item-3d {
-    width: 350px;
+    width: 350px; /* Even number for sub-pixel avoidance */
   }
   
   .carousel-item-3d .service-icon {
@@ -256,7 +305,7 @@
   }
   
   .carousel-item-3d {
-    width: 280px;
+    width: 280px; /* Even number for sub-pixel avoidance */
     height: 350px;
   }
   

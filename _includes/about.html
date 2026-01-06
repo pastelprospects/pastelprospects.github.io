@@ -1,15 +1,4 @@
 <!-- About -->
-<style>
-  .card-flex .card img {
-      transition: transform 0.3s ease-in-out; /* Add transition for smooth scaling */
-    }
-  
-    .card-flex .card img:hover, /* Optional: Magnify on hover too */
-    .card-flex .card img.magnified { /* Class added by JS */
-      transform: scale(1.1); /* Adjust scale factor as desired */
-    }
-  </style>
-
 {% if site.locale and site.locale != "" and site.locale != nil %}
 <section class="page-section" id="{{ site.data.sitetext[site.locale].about.section | default: "about" }}">
   <div class="container">
@@ -22,31 +11,82 @@
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="large text-muted">{{ site.data.sitetext[site.locale].about.body | markdownify }}</div>
-        </div>
       </div>
     </div>
   </div>
-      <div class="card-flex">
-        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
-          <a href="https://www.deleatelier.com" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/logos/dele.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 8px solid rgb(225, 225, 225, 0.5); filter: grayscale(75%);" onContextMenu="return false;"></a>
-              <div class="card-body text-center" style="padding-top: 35px;">
-                <h5 class="card-title text-uppercase">Delé Atelier</h5>
-                <p class="card-text" style="color: grey;">Athleisure Lifestyle</p>
+
+  <!-- 3D Orb Carousel -->
+  <div class="about-carousel-3d-container">
+    <div class="about-carousel-3d" id="aboutCarousel3d">
+      <!-- Delé Atelier Orb -->
+      <div class="about-carousel-item" data-index="0">
+        <div class="about-orb-wrapper">
+          <a href="https://www.deleatelier.com" target="_blank" rel="noopener noreferrer" class="about-orb-link">
+            <div class="about-orb">
+              <div class="about-orb-image">
+                <img src="/assets/img/logos/boom-chrome.png" alt="Delé Atelier" onContextMenu="return false;">
+              </div>
             </div>
-          </div>
-      <br>
-        <div class="card" style="width: 300px; border-color: transparent; box-shadow: none; margin-right: 50px; margin-left: 50px;">
-          <a href="https://cassett.xyz" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/img/logos/cassett.png" class="d-block w-100 rounded-circle" alt="" style="box-shadow: 2px 4px 6px 0 rgba(70, 70, 70, 0.5); border: 8px solid rgb(225, 225, 225, 0.5); filter: grayscale(75%);" onContextMenu="return false;"></a>
-              <div class="card-body text-center" style="padding-top: 35px;">
-                <h5 class="card-title text-uppercase">Cassett</h5>
-                <p class="card-text" style="color: grey;">Audio-Visual Journaling</p>
-            </div>
+          </a>
+          <div class="about-orb-content">
+            <h5 class="about-orb-title">Delé Atelier</h5>
+            <p class="about-orb-text">Athleisure Lifestyle</p>
           </div>
         </div>
-      <br>
-      <br>
+      </div>
+
+      <!-- Cassett Orb -->
+      <div class="about-carousel-item" data-index="1">
+        <div class="about-orb-wrapper">
+          <a href="https://cassett.xyz" target="_blank" rel="noopener noreferrer" class="about-orb-link">
+            <div class="about-orb">
+              <div class="about-orb-image">
+                <img src="/assets/img/logos/cassett-chrome.png" alt="Cassett" onContextMenu="return false;">
+              </div>
+            </div>
+          </a>
+          <div class="about-orb-content">
+            <h5 class="about-orb-title">Cassett</h5>
+            <p class="about-orb-text">Audio-Visual Journaling</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aero-View Orb -->
+      <div class="about-carousel-item" data-index="2">
+        <div class="about-orb-wrapper">
+          <a href="/globe" target="_blank" rel="noopener noreferrer" class="about-orb-link">
+            <div class="about-orb">
+              <div class="about-orb-image">
+                <img src="/assets/img/logos/aero-view.png" alt="Aero-View" onContextMenu="return false;">
+              </div>
+            </div>
+          </a>
+          <div class="about-orb-content">
+            <h5 class="about-orb-title">Aero-View</h5>
+            <p class="about-orb-text">Aerial Imagery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="about-carousel-controls">
+      <button class="about-carousel-control about-carousel-prev" id="aboutPrevBtn" aria-label="Previous">
+        <span>‹</span>
+      </button>
+      <button class="about-carousel-control about-carousel-next" id="aboutNextBtn" aria-label="Next">
+        <span>›</span>
+      </button>
+    </div>
+
+    <!-- Indicators -->
+    <div class="about-carousel-indicators">
+      <span class="about-indicator active" data-target="0"></span>
+      <span class="about-indicator" data-target="1"></span>
+      <span class="about-indicator" data-target="2"></span>
+    </div>
+  </div>
 </section>
 {% else %}
 <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
@@ -67,21 +107,273 @@
 {% endif %}
 
 <script>
-  const aboutImages = document.querySelectorAll('.card-flex .card img');
-
-  aboutImages.forEach(image => {
-    let isMagnified = false; // Track magnification state
-
-    image.addEventListener('mouseover', () => {
-      if (!isMagnified) { // Only magnify if not already magnified
-        image.classList.add('magnified');
-      }
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('aboutCarousel3d');
+    if (!carousel) return;
+    
+    const items = document.querySelectorAll('.about-carousel-item');
+    const prevBtn = document.getElementById('aboutPrevBtn');
+    const nextBtn = document.getElementById('aboutNextBtn');
+    const indicators = document.querySelectorAll('.about-indicator');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+    const spacing = 50; // Space between orbs (like services carousel)
+    
+    // Get responsive item width
+    function getItemWidth() {
+        return window.innerWidth < 768 ? 195 : 240;
+    }
+    
+    // Position items (matching services carousel approach)
+    function positionItems() {
+        const currentItemWidth = getItemWidth();
+        items.forEach((item, index) => {
+            // Calculate relative position from current active orb (like services carousel)
+            let relativeIndex = index - currentIndex;
+            
+            // Handle infinite loop wrapping (exactly like services carousel)
+            if (relativeIndex > 1) {
+                relativeIndex = relativeIndex - totalItems;
+            } else if (relativeIndex < -1) {
+                relativeIndex = relativeIndex + totalItems;
+            }
+            
+            // Calculate position based on relative index (like services carousel)
+            const x = relativeIndex * (currentItemWidth + spacing);
+            
+            // Only show 3 orbs: previous, current, next (like services carousel)
+            if (Math.abs(relativeIndex) > 1) {
+                item.style.display = 'none';
+                item.classList.remove('active');
+                return;
+            } else {
+                item.style.display = 'flex';
+            }
+            
+            // Apply 3D effects based on position (like services carousel)
+            const z = -Math.abs(relativeIndex) * 50; // Depth effect
+            const rotateY = relativeIndex * 5; // Rotation for side orbs
+            
+            // Round x to integer to avoid subpixel rendering (like services carousel)
+            const roundedX = Math.round(x);
+            
+            // Use translate3d for better hardware acceleration (like services carousel)
+            // Active orb (relativeIndex === 0) will be centered at calc(-50% + 0px)
+            // Side orbs will overflow off-screen on mobile
+            item.style.transform = `translate3d(calc(-50% + ${roundedX}px), -50%, ${z}px) rotateY(${rotateY}deg)`;
+            
+            // Remove all existing state classes
+            item.classList.remove('active', 'side-card', 'left', 'right');
+            
+            // Add appropriate state classes (like services carousel)
+            if (relativeIndex === 0) {
+                item.classList.add('active');
+                item.style.opacity = '1';
+                item.style.zIndex = '10';
+            } else {
+                item.classList.add('side-card');
+                item.style.opacity = '0.9';
+                item.style.zIndex = '9';
+                if (relativeIndex === -1) {
+                    item.classList.add('left');
+                } else if (relativeIndex === 1) {
+                    item.classList.add('right');
+                }
+            }
+            
+            item.style.pointerEvents = 'auto';
+            item.style.visibility = 'visible';
+            
+            // Update dynamic sphere lighting based on rotation
+            updateOrbLighting(item, rotateY);
+        });
+    }
+    
+    // Initialize carousel positions
+    function initializeCarousel() {
+        currentIndex = 0;
+        // Don't rotate container - match services carousel approach
+        carousel.style.transform = '';
+        positionItems();
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === 0);
+        });
+    }
+    
+    // Update dynamic sphere lighting based on rotation angle
+    function updateOrbLighting(item, rotateY) {
+        const orb = item.querySelector('.about-orb');
+        if (!orb) return;
+        
+        // Calculate light position based on rotation
+        // Light source is from top-left (30%, 30%), but moves as orb rotates
+        // Convert rotation to light position (0-100%)
+        // rotateY is now the side rotation angle (like services carousel: -15, 0, 15)
+        const normalizedAngle = ((rotateY % 360) + 360) % 360;
+        
+        // Calculate light X position (left to right as orb rotates)
+        // -15deg (left) = 30% (left), 0deg (center) = 50% (center), 15deg (right) = 70% (right)
+        const lightX = 30 + (Math.sin(normalizedAngle * Math.PI / 180) * 20);
+        
+        // Calculate light Y position (top to bottom as orb rotates)
+        // Keep light at top for side orbs, center for active
+        const lightY = rotateY === 0 ? 30 : 35;
+        
+        // Update CSS custom properties for dynamic lighting
+        orb.style.setProperty('--light-x', `${lightX}%`);
+        orb.style.setProperty('--light-y', `${lightY}%`);
+    }
+    
+    // Rotate carousel (matching services carousel approach)
+    function rotateCarousel(direction) {
+        // Update current index (exactly like services carousel)
+        currentIndex = direction === 'next' 
+            ? (currentIndex + 1) % totalItems
+            : (currentIndex - 1 + totalItems) % totalItems;
+        
+        // Don't rotate container - match services carousel approach
+        carousel.style.transform = '';
+        
+        // Reposition items (like services carousel)
+        positionItems();
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', () => rotateCarousel('prev'));
+    if (nextBtn) nextBtn.addEventListener('click', () => rotateCarousel('next'));
+    
+    // Indicator clicks (matching services carousel)
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            // Go directly to slide (like services carousel)
+            currentIndex = index;
+            carousel.style.transform = '';
+            positionItems();
+            indicators.forEach((ind, idx) => {
+                ind.classList.toggle('active', idx === currentIndex);
+            });
+        });
     });
-
-    image.addEventListener('mouseout', () => {
-      image.classList.remove('magnified');
-      isMagnified = false; // Reset magnification state
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            rotateCarousel('prev');
+        } else if (e.key === 'ArrowRight') {
+            rotateCarousel('next');
+        }
     });
-  });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isDragging = true;
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+        
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                rotateCarousel('next');
+            } else {
+                rotateCarousel('prev');
+            }
+        }
+    });
+    
+    // Auto-rotation
+    let autoRotateInterval;
+    let isHovering = false;
+    
+    function startAutoRotate() {
+        if (!isHovering && autoRotateInterval) {
+            clearInterval(autoRotateInterval);
+        }
+        if (!isHovering) {
+            autoRotateInterval = setInterval(() => {
+                rotateCarousel('next');
+            }, 4000); // Rotate every 4 seconds
+        }
+    }
+    
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+    
+    function handleMouseEnter() {
+        isHovering = true;
+        stopAutoRotate();
+    }
+    
+    function handleMouseLeave() {
+        isHovering = false;
+        setTimeout(() => {
+            if (!isHovering) {
+                startAutoRotate();
+            }
+        }, 100);
+    }
+    
+    // Pause auto-rotation on hover
+    carousel.addEventListener('mouseenter', handleMouseEnter);
+    carousel.addEventListener('mouseleave', handleMouseLeave);
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('mouseenter', handleMouseEnter);
+        prevBtn.addEventListener('mouseleave', handleMouseLeave);
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('mouseenter', handleMouseEnter);
+        nextBtn.addEventListener('mouseleave', handleMouseLeave);
+    }
+    
+    items.forEach((item) => {
+        item.addEventListener('mouseenter', handleMouseEnter);
+        item.addEventListener('mouseleave', handleMouseLeave);
+    });
+    
+    indicators.forEach((indicator) => {
+        indicator.addEventListener('mouseenter', handleMouseEnter);
+        indicator.addEventListener('mouseleave', handleMouseLeave);
+    });
+    
+    // Handle window resize to update item width
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            positionItems();
+        }, 100);
+    });
+    
+    // Initialize
+    initializeCarousel();
+    startAutoRotate();
+});
 </script>
 <!-- End About -->
